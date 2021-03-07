@@ -1606,3 +1606,70 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+/*********************************************
+ * Color Text
+ *********************************************/
+ .CornflowerBlue{
+	 color:#6495ED;
+ }
+ .Blue{
+	 color:#0000FF;
+ }
+ .Periwinkle{
+	 color:#CCCCFF;
+ }
+ .PastelBlue{
+	 color:#A7C7E7;
+ }
+ .Silver{
+	 color:#C0C0C0;
+ }
+ .Gray{
+	 color:#808080;
+ }
+ .Red{
+	 color:#FF0000;
+ }
+ .Maroon{
+	 color:#800000;
+ }
+ .Yellow{
+	 color:#FFFF00;
+ }
+ .Olive{
+	 color:#808000;
+ }
+ .Lime{
+	 color:#00FF00;
+ }
+ .Green{
+	 color:#008000;
+ }
+ .Aqua{
+	 color:#00FFFF;
+ }
+ .Teal{
+	 color:#008080;
+ }
+ .Navy{
+	 color:#000080;
+ }
+ .Fuchsia{
+	 color:#FF00FF;
+ }
+ .Purple{
+	 color:#800080;
+ }
+ .Bronze{
+	 color:#CD7F32;
+ }
+ .GoldenYellow{
+	 color:#FFC000;
+ }
+ .LightOrange{
+	 color:#FFD580;	 
+ }
+ .RedOrange{
+	 color:#FF4433;	 
+ }
