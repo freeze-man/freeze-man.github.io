@@ -61,6 +61,8 @@ def greet2(name, msg="Good morning!"):
     print("Hello", name + "," + msg)
 
 #greet2("Monica")
+#greet2(name="FreezeMan")
+#greet2(name="FreezeMan", "Come On!!!")
 #greet2("FreezeMan", "Come On!!!")
 #greet2("FreezeMan", msg="Come On!!!")
 #greet2(msg="Come On!!!", "FreezeMan") # Error(SyntaxError: positional argument follows keyword argument)
@@ -129,19 +131,19 @@ func(D)
 
 # Python program to demonstrate 
 # passing dictionary as kwargs 
-def display(**name): 
+def display0(**name): 
       
     print (name["fname"]+" "+name["mname"]+" "+name["lname"]) 
   
-def main(): 
+def main0(): 
       
     # passing dictionary key-value  
     # pair as arguments 
-    display(fname ="John", 
+    display0(fname ="John", 
             mname ="F.",  
             lname ="Kennedy") 
 # Driver's code 
-main()
+main0()
 
 ####Output:####
 #John F. Kennedy
@@ -149,19 +151,19 @@ main()
 
 # Python program to demonstrate 
 # passing dictionary as kwargs
-def display(x = 0, y = 0, **name): 
+def display1(x = 0, y = 0, **name): 
       
-    print (name["fname"]+" "+name["mname"]+" "+name["lname"]) 
-    print ("x =", x) 
-    print ("y =", y) 
+    print(name["fname"]+" "+name["mname"]+" "+name["lname"]) 
+    print("x =", x) 
+    print("y =", y) 
   
-def main(): 
+def main1(): 
     # passing dictionary key-value  
     # pair with other arguments 
-    display(2, fname ="John", mname ="F.", lname ="Kennedy") 
+    display1(2, fname ="John", mname ="F.", lname ="Kennedy") 
       
 # Driver's code 
-main() 
+main1() 
 
 ####Output:####
 
@@ -175,9 +177,9 @@ def concatenate(**kwargs):
     for x, y in kwargs:
         print(x, y)
     for arg in kwargs.values():
-	result += arg
+        result += arg
     for key in kwargs.keys():
-	print(key)
+        print(key)
     return result
 
 #print(concatenate(a="Real", b="Python", c="Is", d="Great", e="!"))
@@ -193,3 +195,16 @@ def my_function(a, b, *args, **kwargs):
 #my_function(1,2,3,4)
 #print("-----------")
 #my_function(1,2,3,4,5, name="FreezeMan")
+
+# Function argument unpacking
+
+def myfunc(x, y, z):
+    print(x, y, z)
+
+tuple_vec = (1, 0, 1)
+dict_vec = {'x': 1, 'y': 0, 'z': 1}
+
+myfunc(*tuple_vec) #1, 0, 1
+
+myfunc(**dict_vec) #1, 0, 1
+myfunc(**dict_vec) #1, 0, 1

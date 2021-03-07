@@ -220,7 +220,7 @@ x = min(a)
 print(x)
 
 ###abs
-x = abs(-7.25))
+x = abs(-7.25)
 print(x)
 
 ###sum
@@ -231,3 +231,24 @@ print(x)
 a = (1, 2, 3, 4, 5)
 x = sum(a) 
 print(x)
+
+
+
+# "is" vs "=="
+# • "is" expressions evaluate to True if two 
+#   variables point to the same object
+
+# • "==" evaluates to True if the objects 
+#   referred to by the variables are equal
+
+a = [1, 2, 3]
+b = a
+
+print(a is b) #True
+print(a == b) #True
+
+c = list(a)
+
+print(a == c) #True
+print(a is c) #False
+
