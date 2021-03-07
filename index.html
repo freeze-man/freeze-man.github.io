@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Python tutorial - by FreezeMan</title>
+		<title>Python3 tutorial - by FreezeMan</title>
 
-		<meta name="description" content="Python language tutorials">
+		<meta name="description" content="Python ver.3 language tutorials">
 		<meta name="author" content="FreezeMan">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -38,7 +38,7 @@
 						<small>Created by <a href="">Farzad Latifnia</a> (@FreezeMan)</small>
 					</p>
 					<p>
-						Apr - 2020
+						Apr 2020 - Jan 2021
 					</p>
 				</section>
 
@@ -48,6 +48,19 @@
 						<p>you have a platform</p>
 						<p>IDE or Editor</p>
 						<p>if not install, so installing python</p>
+					</section>
+					<section>
+						<h2>Using the Python Interpreter</h2>
+						<h4>The Python interpreter is usually installed:</h4>
+						<pre><code class="hljs shell">
+# /usr/local/bin/python
+
+or
+
+# /usr/bin/python
+# /usr/bin/python2
+# /usr/bin/python3
+						</code></pre>
 					</section>
 					<section>
 						<h3>How to check Python?</h3>
@@ -61,7 +74,6 @@
 							[root@FreezeMan ~]# python --version
 							Python 3.6.8
 						</code></pre>						
-						<!--<img width="362" height="111" data-src="images/python_version_alias.png" alt="python version" style="">-->
 					</section>
 				</section>
 
@@ -70,13 +82,25 @@
 						<h2>How you can run Python?</h2>
 						<ol>
 							<li>Run Python in Immediate mode (on Shell)</li>
-							<li>Run Python script mode</li>
+							<li>Run Python script mode(by Command or File)</li>
 							<li>Run Python in the <small>Integrated Development Environment</small> (IDE)</li>
 						</ol>
 					</section>
 
 					<section>
 						<h3>Run Python in Immediate mode (on Shell or Interactive)</h3>
+						<ul style="font-size:20px">
+							<li><span class="highlight-green">Ctrl-P:</span> to the first Python prompt you get</li>
+							<li><span class="highlight-green">Ctrl-N:</span> python prompt moves one down</li>
+							<li><span class="highlight-green">Ctrl-A:</span> moves the cursor to the beginning of the line</li>
+							<li><span class="highlight-green">Ctrl-E:</span> moves the cursor to the end of the line</li>
+							<li><span class="highlight-green">Ctrl-B:</span> moves it one position to the left</li>
+							<li><span class="highlight-green">Ctrl-F:</span> moves it one position to the right</li>
+							<li><span class="highlight-green">Backspace:</span> erases the character to the left of the cursor</li>
+							<li><span class="highlight-green">Ctrl-D:</span> erases the character to its right</li>
+							<li><span class="highlight-green">Ctrl-K:</span> (kills)erases the rest of the line to the right of the cursor</li>
+							<li><span class="highlight-green">Ctrl-Y:</span> yanks back the last killed string</li>
+						</ul>
 						<pre><code class="hljs shell">
 [root@FreezeMan ~]# python
 Python 3.6.8 (default, Nov 21 2019, 19:31:34) 
@@ -87,10 +111,50 @@ Type "help", "copyright", "credits" or "license" for more information.
 					</section>
 
 					<section>
-						<h2>Run Python script mode</h2>
+						<h2>Run Python script mode(by Command)</h2>
+						<p>python -c <span class="highlight-green">command</span> [arg] ...</p>
+<pre><code class="hljs shell">[root@FreezeMan example]#python -c "print('test')"
+test
+[root@FreezeMan example]#
+</code></pre>
+					</section>
+
+					<section>
+						<h2>Argument Passing</h2>
+						<p style="font-size:30px">The script name and additional arguments thereafter are passed to
+						the script in the variable <span class="highlight-green">sys.argv</span>, which is a list of strings</p>
+						<p style="font-size:30px">When the script name is given as ’ <span class="highlight-blue">-</span> ’ (meaning standard input), <span class="highlight-green">sys.argv[0]</span> is set to ’ <span class="highlight-blue">-</span> ’. When <span class="highlight-red">-c</span> command is used,
+						<span class="highlight-green">sys.argv[0]</span> is set to ’<span class="highlight-red">-c</span>’</p>
+						<pre><code class="hljs python">
+#access by import that
+import sys
+args = sys.argv
+print(sys.argv)
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Argument Passing (Example)</h2>
+						<pre><code class="hljs python">
+#content of py_script.py
+import sys						
+print(sys.argv)
+						</code></pre>
+						<pre><code class="hljs shell">
+[root@FreezeMan example]# python py_script.py test
+['py_script.py', 'test']
+[root@FreezeMan example]# python3 -c "import sys; print(sys.argv)"
+['-c']
+[root@FreezeMan example]#
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Run Python script mode(by File)</h2>
 						<p>Note: (<span class="highlight-green">.py</span>) extension file python</p>
 <pre><code class="hljs shell">[root@FreezeMan example]# python py_script.py 
 hello world !!!
+[root@FreezeMan example]#
 </code></pre>
 					</section>
 
@@ -119,6 +183,13 @@ print("hello world !!!")
 
 							```
 						</script>
+					</section>
+
+					<section>
+						<h2>“Compiled” Python files</h2>
+						<p>
+							<span class="highlight-blue">script.pyc</span> is successfully compiled of <span class="highlight-green">script.py</span>
+						</p>
 					</section>
 
 				</section>
@@ -172,6 +243,7 @@ print("hello world !!!")
 				<section>
 					<section>
 						<h3>Python Statement, Indentation and Comments</h3>
+						<p>Each enter(&crarr;) per line sentence contains Statement and Syntax code Python. </p>
 					</section>
 
 					<section>
@@ -219,32 +291,17 @@ if True: print('Hello'); a = 5
 
 					<section>
 						<h2>Python Comments</h2>
-						<p> (#) and (''') or (""")</p>
+						<p>this sentence <span class="Red">never</span> read or run by interpret's Python</p>
+						<p> (<span class="GoldenYellow">#</span>...) and (<span class="GoldenYellow">'''</span>...<span class="GoldenYellow">'''</span>) or (<span class="GoldenYellow">"""</span>...<span class="GoldenYellow">"""</span>)</p>
 						<pre><code class="hljs python">
-#This is a comment
-#print out Hello
+# This is a comment
+# print out Hello
+# print("can't print")
 print('Hello')
 """This is also a
 perfect example of
 multi-line comments"""
 						</code></pre>
-					</section>
-
-					<section>
-						<h2>Docstrings in Python</h2>
-						<ul>
-							<li><small>The docstrings are associated with the object as their<span class="highlight-green">__doc__</span> attribute</small></li>
-							<li><small>help function => help()</small></li>
-							<li><small>used in class, function, method of class, package, scripts</small></li>
-						</ul>
-						<pre><code class="hljs python">
-def double(num):
-    """Function to double the value"""
-    return 2*num
-print(double.__doc__)
-						</code></pre>
-						<p>output :</p>
-						<pre><code class="hljs shell">Function to double the value</code></pre>
 					</section>
 
 				</section>
@@ -253,16 +310,16 @@ print(double.__doc__)
 					<section>
 						<h2>Python Variables and Literals</h2>
 						<ul>
-							<li><small>variable is a named location used to store data in the memory</small></li>
-							<li><small>Python is a type-inferred language(Changing the value of a variable)</small></li>
+							<li style="margin-bottom:15px"><small>variable is a named location used to store data in the memory</small></li>
+							<li style="margin-bottom:15px"><small>Python is a type-inferred language(Changing the value of a variable)</small></li>
 						</ul>
 					</section>
 
 					<section>
 						<h2>Variables</h2>
 						<ul>
-							<li>Declaring and assigning value to a variable(by =)</li>
-							<li>Assigning multiple values to multiple variables</li>
+							<li><small>Declaring and assigning value to a variable(by =)</small></li>
+							<li><small>Assigning multiple values to multiple variables</small></li>
 						</ul>
 						<pre><code class="hljs python">number = 10
 print(number)
@@ -271,12 +328,17 @@ print(number)
 website = "lenovo.com"
 print(website)
 website = 'freezeman.com'
-print(website)</code></pre>
-						<p>output :</p>
-						<pre><code class="hljs shell">10
-1.1
-lenovo
-freezeman.com</code></pre>
+print(website)
+x = y = z = 0 # Zero x, y and z
+a, b = 10, 20 # a = 10 ; b = 20
+string1, string2, string3 = '', 'Trondheim', 'Hammer Dance'
+non_null = string1 or string2 or string3
+print(non_null)
+#10
+#1.1
+#lenovo.com
+#freezeman.com
+#'Trondheim'</code></pre>
 					</section>
 
 					<section>
@@ -299,7 +361,7 @@ freezeman.com</code></pre>
 							<li>Everything is an object in Python</li>
 							<li>Data types are actually classes</li>
 							<li>Variables are instance (object) of these classes</li>
-							<li>The index starts from 0 (zero) in Python</li>
+							<li>The index starts from 0 (<span class="GoldenYellow">zero</span>) in Python</li>
 						</ul>
 					</section>
 
@@ -314,34 +376,67 @@ freezeman.com</code></pre>
 					</section>
 
 					<section>
+						<h2>Python Strings</h2>
+						<ul>
+							<li><small>String is sequence of Unicode characters</small></li>
+							<li><small>can use single quotes or double quotes to represent strings</small></li>
+							<li><small>Multi-line strings can be denoted using triple quotes</small></li>
+							<li><small>Just like a list and tuple</small></li>
+							<li><small>the slicing operator [ ] can be used with strings</small></li>
+
+						</ul>
+						<pre><code class="hljs python">s = "This is a string"
+s = 'Hello world!'
+s = '''A multiline
+string'''
+s = """Hello world!"""
+s[4] = 'l'
+print("s[4] = ", s[4]) => 's[4] = l'
+print(s) => 'Helll world!'
+a, b = "AB"
+a, b = "AABB" # ValueError: too many values to unpack (expected 2)
+</code></pre>
+					</section>
+
+					<section>
+						<h2>Python Boolean</h2>
+						<ul>
+							<li>True</li>
+							<li>False</li>
+						</ul>
+						<p>Note: Python interprets any <span class="highlight-blue">non-zero</span> value as <span class="highlight-green">True</span>. <span class="highlight-blue">None</span> and <span class="highlight-blue">0</span> are interpreted as <span class="highlight-red">False</span>.</p>
+					</section>
+
+					<section>
 						<h2>Python List</h2>
 						<ul>
 							<li>List is an ordered sequence of items</li>
-							<li>Items separated by <span style="font-size:70%">commas</span> are enclosed within <span style="font-size:70%">brackets</span> <span class="highlight-green">[1, 2, ...]</span></li>
+							<li>Items separated by <span style="font-size:70%" class="highlight-green">commas</span> are enclosed within <span style="font-size:70%" class="highlight-green">brackets</span> <span class="highlight-green">[1, 2, ...]</span></li>
 							<li>are mutable (can be altered or changeable)</li>
 							<li>Allows duplicate members</li>
 							<li>Has Indexing </li>
 						</ul>
 						<pre><code class="hljs python">a = [1, 2.2, 'python']
-a = [1, 2, 3]
-a[2] = 4</code></pre>
+a = [1, 2, 3, 3]
+print(a) # => [1, 2, 3, 3]
+a[2] = 4
+print(a) # => [1, 2, 4, 3]</code></pre>
 					</section>
 
 					<section>
 						<h2>Python Tuple</h2>
 						<ul>
-							<li><small>Tuple is an ordered sequence of items same as a list</small></li>
-							<li><small>The only difference is that tuples are immutable(unchangeable)</small></li>
-							<li><small>Tuples once created cannot be modified</small></li>
-							<li><small>Tuples are used to write-protect data and are usually faster than lists</small></li>
-							<li><small>It is defined within <span style="font-size:100%">parentheses</span> where items are separated by <span style="font-size:100%">commas</span> <span class="highlight-green">(1, "22", ...)</span></small></li>
-							<li><small>Allows duplicate members</small></li>
+							<li style="margin-bottom:15px"><small>Tuple is an ordered sequence of items same as a list</small></li>
+							<li style="margin-bottom:15px"><small>The only difference is that tuples are immutable(unchangeable)</small></li>
+							<li style="margin-bottom:15px"><small>Tuples once created cannot be modified</small></li>
+							<li style="margin-bottom:15px"><small>Tuples are used to <span class="Red">write-protect</span> data and are usually faster than lists</small></li>
+							<li style="margin-bottom:15px"><small>It is defined within <span style="font-size:100%" class="highlight-green">parentheses</span> where items are separated by <span style="font-size:100%">commas</span> <span class="highlight-green">(1, "22", ...)</span></small></li>
+							<li style="margin-bottom:15px"><small>Allows duplicate members</small></li>
 							<li><small>Has Indexing</small></li>
 
 						</ul>
-						<pre><code class="hljs python">t = (5,'program', 1+3j)
-# t[0:3] = (5, 'program', (1+3j))
-print("t[0:3] = ", t[0:3])
+						<pre><code class="hljs python">t = (5,'program', 1.3)
+print("t[2] = ", t[2]) # => t[2] = 1.3
 </code></pre>
 					</section>
 
@@ -349,15 +444,14 @@ print("t[0:3] = ", t[0:3])
 						<h2>Python Dictionary</h2>
 						<ul>
 							<li>Dictionary is an unordered collection of key-value pairs</li>
-							<li>dictionaries are defined within braces {} with each item being a pair in the form key:value</li>
+							<li>dictionaries are defined within braces <span class="Red">{ }</span> with each item(by "<span class="GoldenYellow"> , </span>") being a pair in the form <span class="GoldenYellow">key</span>:<span class="GoldenYellow">value</span></li>
 							<li>Key and value can be of any type</li>
-							<li>Has Indexing </li>
 							<li>are mutable (can be altered or changeable)</li>
 							<li>No duplicate members</li>
 
 						</ul>
-						<pre><code class="hljs python">d1 = {1:'value','key':2}
-d2 = {"key":'value', 'key1':2}
+						<pre><code class="hljs python">d1 = {1: 123, 'key123': 2}
+d2 = {"first": 'v1', 2.2: 2}
 </code></pre>
 					</section>
 
@@ -365,49 +459,65 @@ d2 = {"key":'value', 'key1':2}
 						<h2>Python Set</h2>
 						<ul>
 							<li>Set is an unordered collection of unique items(*)</li>
-							<li>Set is defined by values separated by comma inside braces { }</li>
+							<li>Set is defined by values separated by comma inside braces <span class="Red">{ }</span></li>
 							<li>Items in a set are not ordered</li>
 							<li>Indexing has no meaning</li>
 							<li>No duplicate members(*)</li>
 
 						</ul>
-						<pre><code class="hljs python">sa = {5,2,3,1,4}
-sb = {1,2,2,3,3,3}
+						<pre><code class="hljs python">sa = {5, 2, 3, 1, 4}
+sb = {1, 2, 2, 3, 3, 3}
+print(sb)
+# output: {1, 2, 3}
 </code></pre>
 					</section>
 
 					<section>
-						<h2>Python Strings</h2>
-						<ul>
-							<li>String is sequence of Unicode characters</li>
-							<li>can use single quotes or double quotes to represent strings</li>
-							<li>Multi-line strings can be denoted using triple quotes</li>
-							<li>Just like a list and tuple</li>
-							<li>the slicing operator [ ] can be used with strings</li>
-
-						</ul>
-						<pre><code class="hljs python">s = "This is a string"
-s = '''A multiline
-string'''
-s = 'Hello world!'
-
-# s[4] = 'o'
-print("s[4] = ", s[4])
+						<h2>Conversion between data types</h2>
+						<p><small>Built-in Fanctions</small></p>
+						<p>int() - float() - str() - tuple() - list() - set()</p>
+						<pre><code class="hljs python">s = str(123) # => "123"
+s2 = str("string sample")
+l2 = list(s) # => ["1", "2", "3"]
+t2 = tuple(l2) # => ("1", "2", "3")
+t1 = (12, "22", "13")
+l1 = [10, "2.99", 45.22]
+l3 = list(t1) # => [12, "22", "13"]
+t3 = tuple(l1) # => (10, "2.99", 45.22)
+_set = set(t2) # => {"1", "2", "3"}
+i = int(1.23) # => 1
+# i = int("1.23") # ValueError
+f = float(123) # => 123.0
 </code></pre>
 					</section>
 
 					<section>
 						<h2>Check Type</h2>
+						<p><small>Built-in Fanctions</small></p>
 						<ul>
 							<li>type()</li>
 							<li>isinstance()</li>
 						</ul>
+						<pre><code class="hljs python">s = "This is a string"
+l = ["1", 2, "3", 4.4]
+t = (1, "2", 3, "4.4")
+_set = {1, 2, 3}
+i = 123
+f = 1.23
+print(type(s)) # => &lt;class 'str'&gt;
+print(type(l)) # => &lt;class 'list'&gt;
+print(type(t)) # => &lt;class 'tuple'&gt;
+print(type(i)) # => &lt;class 'int'&gt;
+print(type(f)) # => &lt;class 'float'&gt;
+print(isinstance(s, str)) # => True
+print(isinstance(l, tuple)) # => False
+print(isinstance(t, tuple)) # => True
+print(isinstance(i, list)) # => False
+print(isinstance(f, int)) # => False
+</code></pre>
+						
 					</section>
 
-					<section>
-						<h2>Conversion between data types</h2>
-						<p>int() - float() - str() - tuple() - list()</p>
-					</section>
 					<section>
 						<h2>Python <span class="highlight-green">global</span>, <span class="highlight-green">local</span> and <span class="highlight-green">nonlocal</span> variables</h2>
 						<p>It is will be taught in the <strong class="highlight-blue">Functions</strong> section</p>
@@ -417,6 +527,7 @@ print("s[4] = ", s[4])
 				<section>
 					<section>
 						<h2>Python Input, Output</h2>
+						<p><small>Built-in Fanctions</small></p>
 						<p>print()</p>
 						<p>input()</p>
 					</section>
@@ -439,25 +550,29 @@ The value of a is 5
 
 					<section>
 						<h2>Output formatting</h2>
-						<p>str.format()</p>
-						<p>use the % operator</p>
+						<p>str.format() <span class="GoldenYellow">|</span> use the % operator <span class="GoldenYellow">|</span> f-string</p>
 						<pre><code class="hljs python">x = 5; y = 10; z = 12.3456789
 print('The value of x is {} and y is {}'.format(x,y))
+# The value of x is 5 and y is 10
 print('I love {1} and {0}'.format('bread','butter'))
+# I love butter and bread
 print('Hello {name}, {greeting}'.format(greeting = 'Goodmorning', name = 'John'))
-print('The value of z is %3.2f' %z)</code></pre>
-						<p>output:</p>
-						<pre><code class="hljs text">The value of x is 5 and y is 10
-I love butter and bread
-Hello John, Goodmorning
-The value of z is 12.35</code></pre>
+# Hello John, Goodmorning
+print('The value of z is %3.2f' %z)
+# The value of z is 12.35
+greeting = 'Good Morning'
+name = 'Farzad'
+print(f"Hello {name}, {greeting}")
+# Hello Farzad, Good Morning
+</code></pre>
 					</section>
 
 					<section>
 						<h2>Python Input</h2>
-						<pre><code class="hljs python">>>> num = input('Enter a number: ')
-Enter a number: 10
->>> num
+						<pre><code class="hljs python">num = input('Enter a number: ')
+print(num)
+### output:
+Enter a number: 10 &crarr;
 '10'</code></pre>
 					</section>
 				</section>
@@ -807,7 +922,7 @@ Enter a number: 10
 						<h2>Python Flow Control</h2>
 						<ul>
 							<li>if-elif-else</li>
-							<li>for Loop, range() function</li>
+							<li>for Loop</li>
 							<li>while Loop</li>
 							<li>break, continue</li>
 							<li>pass</li>
@@ -823,12 +938,21 @@ if num > 0:
     print(num, "is a positive number.")
 print("This is always printed.")
 # ----------- #
-if num >= 0:
+if num &gt;= 0:
     print("Positive or Zero")
 else:
     print("Negative number")
 # ----------- #
-if num > 0:
+if num &gt; 0:
+    print("Positive number")
+elif num == 0:
+    print("Zero")
+elif num &lt; 0:
+	print("Negative number")
+else:
+    print("not number for compare")
+
+if num &gt; 0:
     print("Positive number")
 elif num == 0:
     print("Zero")
@@ -853,25 +977,7 @@ for val in numbers:
 print("The sum is", sum)</code></pre>
 
 					</section>
-					<section>
-						<h2>The range() function</h2>
-						<ul>
-							<li><small>We can generate a sequence of numbers using range() function; range(10) will generate numbers from 0 to 9 (10 numbers).</small></li>
-							<li><small>We can also define the start, stop and step size as range(start, stop,step_size)</small></li>
-							<li><small>step_size defaults to 1 if not provided</small></li>
-						</ul>
 
-						<pre><code class="hljs python">print(range(10))
-print(list(range(10)))
-print(list(range(2, 8)))
-print(list(range(2, 20, 3)))
-</code></pre>
-<p>output:</p>
-<pre><code class="hljs python">range(0, 10)
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-[2, 3, 4, 5, 6, 7]
-[2, 5, 8, 11, 14, 17]</code></pre>
-					</section>
 					<section>
 						<h2>for loop with else</h2>
 						<p>A for loop can have an optional else block as well</p>
@@ -892,9 +998,9 @@ No items left.</code></pre>
 					<section>
 						<h2>Python while Loop</h2>
 						<ul>
-							<li><small>The while loop in Python is used to iterate over a block of code as long as the test expression (condition) is true</small></li>
-							<li><small>In the while loop, test expression is checked first. The body of the loop is entered only if the test_expression evaluates to True</small></li>
-							<li><small>After one iteration, the test expression is checked again</small></li>
+							<li style="margin-bottom:15px"><small>The while loop in Python is used to iterate over a block of code as long as the test expression (condition) is true</small></li>
+							<li style="margin-bottom:15px"><small>In the while loop, test expression is checked first. The body of the loop is entered only if the test_expression evaluates to True</small></li>
+							<li style="margin-bottom:15px"><small>After one iteration, the test expression is checked again</small></li>
 							<li><small>This process continues until the test_expression evaluates to False</small></li>
 						</ul>
 						<pre><code class="hljs python">while test_expression:
@@ -946,17 +1052,17 @@ Inside else</code></pre>
 					<section>
 						<h2>Python break and continue</h2>
 						<ul>
-							<li><small>In Python, break and continue statements can alter the flow of a normal loop</small></li>
-							<li><small>The break statement terminates the loop containing it</small></li>
-							<li><small>The continue statement is used to skip the rest of the code inside a loop for the current iteration only</small></li>
+							<li style="margin-bottom:15px"><small>In Python, break and continue statements can alter the flow of a normal loop</small></li>
+							<li style="margin-bottom:15px"><small>The break statement terminates the loop containing it</small></li>
+							<li style="margin-bottom:15px"><small>The continue statement is used to skip the rest of the code inside a loop for the current iteration only</small></li>
 							<li><small>Loop does not terminate but continues on with the next iteration</small></li>
 						</ul>
 					</section>
 					<section>
 						<h2>Python pass statement</h2>
 						<ul>
-							<li><small>In Python programming, the pass statement is a null statement</small></li>
-							<li><small>However, nothing happens when the pass is executed</small></li>
+							<li style="margin-bottom:15px"><small>In Python programming, the pass statement is a null statement</small></li>
+							<li style="margin-bottom:15px"><small>However, nothing happens when the pass is executed</small></li>
 							<li><small>We can do the same thing in an empty function or class as well</small></li>
 						</ul>
 <pre><code class="hljs python">sequence = {'p', 'a', 's', 's'}
@@ -976,23 +1082,22 @@ class Example:
 					<section>
 						<h2>Python Functions</h2>
 						<ol>
-							<li><small>In Python, a function is a group of related statements that performs a specific task</small></li>
-							<li><small>Functions help break our program into smaller and modular chunks</small></li>
-							<li><small>As our program grows larger and larger, functions make it more organized and manageable</small></li>
+							<li style="margin-bottom:15px"><small>In Python, a function is a group of related statements that performs a specific task</small></li>
+							<li style="margin-bottom:15px"><small>Functions help break our program into smaller and modular chunks</small></li>
+							<li style="margin-bottom:15px"><small>As our program grows larger and larger, functions make it more organized and manageable</small></li>
 							<li><small>Furthermore, it avoids repetition and makes the code reusable</small></li>
 						</ol>
 					</section>
 					<section>
 						<h2>components of Function</h2>
 						<ul>
-							<li><small>Keyword def that marks the start of the function header</small></li>
-							<li><small>function name to uniquely identify the function</small></li>
-							<li><small>Parameters (arguments) through which we pass values to a function. They are optional</small></li>
-							<li><small>A colon (:) to mark the end of the function header</small></li>
-							<li><small>Optional documentation string (docstring) to describe what the function does</small></li>
-							<li><small>One or more valid python statements that make up the function body. Statements must have the same indentation level (usually 4 spaces)</small></li>
+							<li style="margin-bottom:15px"><small>Keyword def that marks the start of the function header</small></li>
+							<li style="margin-bottom:15px"><small>function name to uniquely identify the function</small></li>
+							<li style="margin-bottom:15px"><small>Parameters (arguments) through which we pass values to a function. They are optional</small></li>
+							<li style="margin-bottom:15px"><small>A colon (:) to mark the end of the function header</small></li>
+							<li style="margin-bottom:15px"><small>Optional documentation string (docstring) to describe what the function does</small></li>
+							<li style="margin-bottom:15px"><small>One or more valid python statements that make up the function body. Statements must have the same indentation level (usually 4 spaces)</small></li>
 							<li><small>An optional return statement to return a value from the function</small></li>
-
 						</ul>
 					</section>
 					<section>
@@ -1011,17 +1116,38 @@ class Example:
         return -num
 ###
 absolute_value(2)
+print(absolute_value.__doc__)
+# 2
+# This function returns the absolute
+# value of the entered number
 </code></pre>
+					</section>
+
+					<section>
+						<h2>Docstrings in Python</h2>
+						<ul>
+							<li style="margin-bottom:15px"><small>The docstrings are associated with the object as their<span class="highlight-green">__doc__</span> attribute</small></li>
+							<li style="margin-bottom:15px"><small>help function => help()</small></li>
+							<li><small>used in class, function, method of class, package, scripts</small></li>
+						</ul>
+						<pre><code class="hljs python">
+def double(num):
+    """Function to double the value"""
+    return 2*num
+print(double.__doc__)
+						</code></pre>
+						<p>output :</p>
+						<pre><code class="hljs shell">Function to double the value</code></pre>
 					</section>
 
 					<section>
 						<h2>Python Function Arguments</h2>
 						<ul>
-							<li><small>You can define a function that takes variable number of arguments</small></li>
-							<li><small>How to define Default Arguments</small></li>
-							<li><small>How to define Independent Keyword Arguments</small></li>
-							<li><small>How to define Arbitrary(Variable) Arguments[use an asterisk (*) before the parameter name]</small></li>
-							<li><small>How to define keyword arguments, use a dictionary and prepend with two asterisks (**)</small></li>
+							<li style="margin-bottom:15px"><small>You can define a function that takes variable number of arguments</small></li>
+							<li style="margin-bottom:15px"><small>How to define Default Arguments</small></li>
+							<li style="margin-bottom:15px"><small>How to define Independent Keyword Arguments</small></li>
+							<li style="margin-bottom:15px"><small>How to define Arbitrary(var) Arguments[use an asterisk(*) before the parameter name]</small></li>
+							<li><small>How to define keyword arguments, use a dictionary and prepend with two asterisks(**)</small></li>
 						</ul>
 <pre><code class="hljs python">def greet(name, msg):
     """This function greets to
@@ -1029,8 +1155,26 @@ absolute_value(2)
     print("Hello", name + ', ' + msg)
 
 greet("Monica", "Good morning!")
+greet("Monica") # TypeError: greet() missing 1 required positional argument: 'msg'
 ### output:
 ### Hello Monica, Good morning!
+
+def greet2(name, msg="Good morning!"):
+    """This function greets to the person with the provided message"""
+    print("Hello", name + "," + msg)
+
+#greet2("Monica")
+#greet2("FreezeMan", "Come On!!!")
+#greet2("FreezeMan", msg="Come On!!!")
+#greet2(msg="Come On!!!", "FreezeMan") # Error(SyntaxError: positional argument follows keyword argument)
+#greet2(msg="Come On!!!", name="FreezeMan")
+#greet2(name="FreezeMan", msg="Good morning !!!")
+#greet2(name="FreezeMan", msg="Good morning !!!", "asdasd") # Error SyntaxError: positional argument follows keyword argument
+
+def greet3(name="Monica", msg):
+       """SyntaxError: non-default argument follows default argument"""
+       print("Hello", name + "," + msg)
+
 </code></pre>
 					</section>
 
@@ -1041,9 +1185,27 @@ greet("Monica", "Good morning!")
 							<li>*args arguments</li>
 							<li>**kwargs arguments</li>
 						</ol>
-<pre><code class="hljs python">
-def my_function(a, b, *args, **kwargs):
+<pre><code class="hljs python">def function(a, b, *args, **kwargs):
     pass
+
+def greet(*names):
+    """This function greets all
+    the person in the names tuple."""
+    print("hello", names)
+
+greet("Monica", "Luke", "Steve", "John")
+
+def my_function(a, b, *args, **kwargs):
+    print("a =", a)
+    print("b =", b)
+    print("args =", args)
+    print("kwargs =", kwargs)
+
+#my_function(1,2,3,4,5, name="FreezeMan")
+#print("-----------")
+#my_function(1,2,3,4)
+#print("-----------")
+#my_function(1,2)
 </code></pre>
 					</section>
 					<section>
@@ -1098,9 +1260,57 @@ def parent(num):
 					</section>
 
 					<section>
+						<h2>Python Recursion functions</h2>
+						<ul>
+							<li style="margin-bottom:15px"><small>A function that calls itself.</small></li>
+							<li style="margin-bottom:15px"><small>Recursion is the process of defining something in terms of itself.</small></li>
+							<li style="margin-bottom:15px"><small>The Python interpreter limits the depths of recursion to help avoid infinite recursions, resulting in stack overflows.</small></li>
+							<li style="margin-bottom:15px"><small>By default, the maximum depth of recursion is 1000.</small></li>
+							<li><small>A physical world example would be to place two parallel mirrors facing each other. Any object in between them would be reflected recursively.</small></li>
+						</ul>
+						
+						<img width="344" height="236" data-src="images/python-recursion-function.png" alt="python recursion function"/>
+					</section>
+
+					<section>
+						<h2>Python Recursion functions(Example)</h2>
+						<small>Following is an example of a recursive function to find the factorial of an integer.</small>
+						<small>Factorial of a number is the product of all the integers from 1 to that number(Multiple). For example, the factorial of 6 (denoted as 6!) is <span class="highlight-green">1*2*3*4*5*6 = 720</span></small>
+<pre><code class="hljs python">
+def factorial(x):
+    """This is a recursive function
+    to find the factorial of an integer"""
+
+    if x == 1:
+        return 1
+    else:
+        return (x * factorial(x-1))
+
+
+num = 3
+print("The factorial of", num, "is", factorial(num))
+
+### output:
+### The factorial of 3 is 6
+
+# factorial(3)          # 1st call with 3
+# 3 * factorial(2)      # 2nd call with 2
+# 3 * 2 * factorial(1)  # 3rd call with 1
+# 3 * 2 * 1             # return from 3rd call as number=1
+# 3 * 2                 # return from 2nd call
+# 6                     # return from 1st call
+</code></pre>
+					</section>
+
+					<section>
+						<h2>Python Recursion functions</h2>
+						<img style="background-color:white" width="432" height="500" data-src="images/python-factorial-recursion-function.png" alt="python factorial recursion function"/>
+					</section>
+
+					<section>
 						<h2>Python Anonymous/Lambda Function</h2>
 						<ul>
-							<li><small>What are lambda functions in Python?</small></li>
+							<li style="margin-bottom:15px"><small>What are lambda functions in Python?</small></li>
 							<li><small>How to use lambda Functions in Python?</small></li>
 						</ul>
 <pre><code class="hljs python"># Program to show the use of lambda functions
@@ -1116,7 +1326,7 @@ print(double(5))
 						<h2>Use of Lambda Function in python</h2>
 						<span class="highlight-green">with filter()</span>
 						<ul>
-							<li><small>The filter() function in Python takes in a function and a list as arguments</small></li>
+							<li style="margin-bottom:15px"><small>The filter() function in Python takes in a function and a list as arguments</small></li>
 							<li><small>The function is called with all the items in the list and a new list is returned which contains items for which the function evaluates to True</small></li>
 						</ul>
 <pre><code class="hljs python"># Program to filter out only the even items from a list
@@ -1134,7 +1344,7 @@ print(new_list)
 						<h2>Use of Lambda Function in python</h2>
 						<span class="highlight-green">with map()</span>
 						<ul>
-							<li><small>The map() function in Python takes in a function and a list</small></li>
+							<li style="margin-bottom:15px"><small>The map() function in Python takes in a function and a list</small></li>
 							<li><small>The function is called with all the items in the list and a new list is returned which contains items returned by that function for each item</small></li>
 						</ul>
 <pre><code class="hljs python"># Program to double each item in a list using map()
@@ -1149,11 +1359,370 @@ print(new_list)
 </code></pre>
 					</section>
 
+						<!-- hasattr() getattr() delattr() -->
 					<section>
-						<h2>Python Global, Local and Nonlocal variables</h2>						
+						<h2>Python Some Built-in Functions</h2>
+					</section>
+
+					<section>
+						<h2>Python sorted() Function</h2>
+						<p>returns a sorted list of the specified iterable object</p>
 						<ul>
-							<li><small>In Python, a variable declared outside of the function or in global scope is known as a global variable</small></li>
-							<li><small>A variable declared inside the function's body or in the local scope is known as local variable.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px">Syntax:<small> sorted(<span class="GoldenYellow">iterable</span>, <span class="GoldenYellow">key</span>=key, <span class="GoldenYellow">reverse</span>=reverse)</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px">Note:<small> You cannot sort a list that contains BOTH string values AND numeric values.</small></li>
+							<li style="text-align: justify;font-size:30px;">Sorting:<small> Strings are sorted alphabetically, and numbers are sorted numerically.</small></li>
+						</ul>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>iterable</td>
+									<td>Required. The sequence to sort, list, dictionary, tuple etc.</td>
+								</tr>
+								<tr>
+									<td>key</td>
+									<td>Optional. A Function to execute to decide the order. Default is None</td>
+								</tr>
+								<tr>
+									<td>reverse</td>
+									<td>Optional. A Boolean. False will sort ascending, True will sort descending. Default is False</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Python reversed() Function</h2>
+						<p>returns a reversed iterator object</p>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px">Syntax:<small> reversed(<span class="GoldenYellow">sequence</span>)</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px">Note:<small> You cannot sort a list that contains BOTH string values AND numeric values.</small></li>
+							<li style="text-align: justify;font-size:30px;">reversing:<small> Strings are sorted alphabetically, and numbers are sorted numerically.</small></li>
+						</ul>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>sequence</td>
+									<td>Required. Any iterable object.</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Python enumerate() Function</h2>
+						<p><small>method adds counter to an iterable and returns it (the enumerate object)</small></p>
+						<p style="text-align: center;font-size:30px;padding-bottom:15px">Syntax: enumerate(<span class="GoldenYellow">iterable</span>, <span class="GoldenYellow">start</span>=0)</p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>iterable</td>
+									<td>a sequence, an iterator, or objects that supports iteration</td>
+								</tr>
+								<tr>
+									<td>start</td>
+									<td>Optional.starts counting from this number. If start is omitted, 0 is taken as start.</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Python range() Function</h2>
+						<ul>
+							<li style="margin-bottom:15px"><small>We can generate a sequence of numbers using range() function; range(10) will generate numbers from 0 to 9 (10 numbers).</small></li>
+							<li style="margin-bottom:15px"><small>We can also define the start, stop and step size as range(start, stop,step_size)</small></li>
+							<li><small>step_size defaults to 1 if not provided</small></li>
+						</ul>
+
+						<pre><code class="hljs python">print(range(10))
+print(list(range(10)))
+print(list(range(2, 8)))
+print(list(range(2, 20, 3)))
+print(list(range("a","z"))) # TypeError: 'str' object cannot be interpreted as an integer
+print(range(0, 10, -1))
+print(list(range(10, 0, -1)))
+print(list(range(10, 0)))
+
+#range(0, 10)
+#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+#[2, 3, 4, 5, 6, 7]
+#[2, 5, 8, 11, 14, 17]
+#[]
+#[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+#[]
+</code></pre>
+<p>output:</p>
+<pre><code class="hljs python"></code></pre>
+					</section>
+
+					<section>
+						<h2>Python round() Function</h2>
+						<p><small>returns a floating point number that is a rounded version of the specified number, with the specified number of decimals.</small></p>
+						<p>Syntax<small>round(<span class="GoldenYellow">number</span>, <span class="GoldenYellow">digits</span>)</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>Required. The number to be rounded</td>
+								</tr>
+								<tr>
+									<td>digits</td>
+									<td>Optional. The number of decimals to use when rounding the number. Default is 0</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Python pow() Function</h2>
+						<p><small> function returns the value of x to the power of y ( x<sup style="line-height: 8px;vertical-align: super;"> y</sup> ).</small></p>
+						<p>Syntax<small>pow(<span class="GoldenYellow">x</span>, <span class="GoldenYellow">y</span>, <span class="GoldenYellow">z</span>)</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>x</td>
+									<td>a number, the base</td>
+								</tr>
+								<tr>
+									<td>y</td>
+									<td>a number, the exponent</td>
+								</tr>
+								<tr>
+									<td>z</td>
+									<td>Optional. A number, the modulus</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Python max() Function</h2>
+						<p><small> returns the item with the highest value, or the item with the highest value in an iterable.</small></p>
+						<p>Syntax<small> max(<span class="GoldenYellow">n1</span>, <span class="GoldenYellow">n2</span>, <span class="GoldenYellow">n3</span>) <span class="CornflowerBlue">or</span> max(<span class="GoldenYellow">iterable</span>) </small></p>
+						<p><small>If the values are strings, an alphabetically comparison is done.</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>iterable</td>
+									<td>An iterable, with one or more items to compare</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Python min() Function</h2>
+						<p><small>returns the item with the lowest value, or the item with the lowest value in an iterable.</small></p>
+						<p>Syntax<small> min(<span class="GoldenYellow">n1</span>, <span class="GoldenYellow">n2</span>, <span class="GoldenYellow">n3</span>) <span class="CornflowerBlue">or</span> min(<span class="GoldenYellow">iterable</span>) </small></p>
+						<p><small>If the values are strings, an alphabetically comparison is done.</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>iterable</td>
+									<td>An iterable, with one or more items to compare</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Python abs() Function</h2>
+						<p><small>function returns the absolute value of the specified number.</small></p>
+						<p>Syntax<small> abs(<span class="GoldenYellow">number</span>)</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>Required. A number</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Python sum() Function</h2>
+						<p><small>returns a number, the sum of all items in an iterable.</small></p>
+						<p>Syntax<small> sum(<span class="GoldenYellow">iterable</span>, <span class="GoldenYellow">start</span>)</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>iterable</td>
+									<td>Required. The sequence to sum</td>
+								</tr>
+								<tr>
+									<td>start</td>
+									<td>Optional. A value that is added to the return value</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Python chr() Function</h2>
+						<p><small>returns a character (string) from an integer (represents unicode code point of the character)</small></p>
+						<p>Syntax<small> chr(<span class="GoldenYellow">number</span>)</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>An integer representing a valid Unicode code point</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Python ord() Function</h2>
+						<p><small>returns the number representing the unicode code of a specified character</small></p>
+						<p>Syntax<small> ord(<span class="GoldenYellow">character</span>)</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>character</td>
+									<td>String, any character</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Python bin() Function</h2>
+						<p><small>returns the binary version of a specified integer</small></p>
+						<p><small>The result will always start with the prefix <span class="GoldenYellow">0b</span></small></p>
+						<p>Syntax<small> bin(<span class="GoldenYellow">number</span>)</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>Required. An integer</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Python oct() Function</h2>
+						<p><small>returns converts an integer into an octal string</small></p>
+						<p><small>Octal strings in Python are prefixed with <span class="GoldenYellow">0o</span></small></p>
+						<p>Syntax<small> oct(<span class="GoldenYellow">int</span>)</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>int</td>
+									<td>An Integer Number</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Python hex() Function</h2>
+						<p><small>converts the specified number into a hexadecimal value</small></p>
+						<p><small>The returned string always starts with the prefix<span class="GoldenYellow">0x</span></small></p>
+						<p>Syntax<small> hex(<span class="GoldenYellow">number</span>)</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>An Integer</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					
+					<section>
+						<h2>Python eval() Function</h2>
+						<p><small>evaluates the specified expression, if the expression is a legal Python statement, it will be executed</small></p>
+						<p>Syntax<small> eval(<span class="GoldenYellow">expression</span>,<span class="GoldenYellow"> globals</span>, <span class="GoldenYellow">locals</span>)</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Parameter</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+								</tr>
+								<tr>
+									<td>expression</td>
+									<td>A String, that will be evaluated as Python code</td>
+								</tr>
+								<tr>
+									<td>globals</td>
+									<td>Optional. A dictionary containing global parameters</td>
+								</tr>
+								<tr>
+									<td>locals</td>
+									<td>Optional. A dictionary containing local parameters</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section>
+						<h2>Python locals(), var() Function</h2>
+						<p><small>The locals() method updates and returns a dictionary of the current local symbol table.</small></p>
+						<p><small>The vars() function returns the __dict__ attribute of the given object.</small></p>
+					</section>					
+
+					<section>
+						<h2>Python Global, Local and Nonlocal variables</h2>
+						<ul>
+							<li style="margin-bottom:15px"><small>In Python, a variable declared outside of the function or in global scope is known as a global variable</small></li>
+							<li style="margin-bottom:15px"><small>A variable declared inside the function's body or in the local scope is known as local variable.</small></li>
 							<li><small>Nonlocal variable are used in nested function whose local scope is not defined. This means that the variable can be neither in the local nor the global scope</small></li>
 						</ul>
 					</section>
@@ -1167,7 +1736,7 @@ print(new_list)
 						<ul>
 							<li>What are Decorator in Python?</li>
 						</ul>					
-						<p>A decorator takes in a function, adds some functionality and returns it.</p>
+						<p style="font-size:25px">A decorator takes in a function, adds some functionality and returns it.</p>
 <pre><code class="hljs python">
 # Python Decorators example => Decorators.py
 def my_decorator(func):
@@ -1181,9 +1750,37 @@ def say_whee():
     print("Whee!")
 
 say_whee = my_decorator(say_whee)
+say_whee()
 </code></pre>
 
-					</section>				
+					</section>
+					<section>
+						<h2>Python Decorators</h2>
+						<ul>
+							<li>Generally, we decorate a function and reassign it as</li>
+						</ul>					
+						<pre><code class="hljs python">
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+	func()
+	print("Something is happening after the function is called.")
+    return wrapper
+
+def say_whee():
+    print("Whee!")
+
+say_whee = my_decorator(say_whee)
+say_whee()
+
+#is equivalent to:
+
+@my_decorator
+def say_whee():
+    print("Whee!")
+</code></pre>
+
+					</section>
 				</section>
 				<section>
 					<section>
@@ -1193,8 +1790,9 @@ say_whee = my_decorator(say_whee)
 						</ul>					
 						<p>Modules refer to a file containing Python statements and definitions.</p>
 <pre><code class="hljs python">
-# Python Module example => example.py
-
+#!/usr/bin/env python3
+# Python Module example => module_add.py
+aa = 100
 def add(a, b):
    """This program adds two
    numbers and return the result"""
@@ -1207,9 +1805,15 @@ def add(a, b):
 					<section>
 						<h2>How to import modules in Python?</h2>
 						<p><small>We can import the definitions inside a module to another module or the interactive interpreter in Python by use the <span class="highlight-red">import</span> keyword to do</small></p>
-<pre><code class="hljs python">import example
-example.add(4,5.5)
-### output:
+<pre><code class="hljs python">#!/usr/bin/env python3
+
+import module_add
+
+print(module_add.aa)
+print(module_add.add(4, 5.5))
+
+#----output:
+### 100
 ### 9.5
 </code></pre>
 					</section>
@@ -1236,6 +1840,7 @@ import math as m
 print("The value of pi is", m.pi)
 </code></pre>
 					</section>
+
 					<section>
 						<h2>Python from...import statement</h2>
 						<p><small>We can import specific names from a module without importing the module as a whole</small></p>
@@ -1246,6 +1851,7 @@ print("The value of pi is", pi)
 print("The value of e is", e)
 </code></pre>
 					</section>
+
 					<section>
 						<h2>Import all names</h2>
 						<p><small>We can import all names(definitions) from a module using the following construct:</small></p>
@@ -1255,6 +1861,7 @@ from math import *
 print("The value of pi is", pi)
 </code></pre>
 					</section>
+
 					<section>
 						<h2>Python Module Search Path</h2>
 						<p><small>While importing a module, Python looks at several places. Interpreter first looks for a built-in module. Then(if built-in module not found), Python looks into a list of directories defined in <span class="highlight-green">sys.path</span></small></p>
@@ -1262,6 +1869,7 @@ print("The value of pi is", pi)
 sys.path
 </code></pre>
 					</section>
+
 					<section>
 						<h2>Python Module for more info</h2>
 						<p>dir(), __name__</p>
@@ -1282,6 +1890,7 @@ example.__name__
 						</ul>
 						<img width="412" height="306" data-src="images/PackageModuleStructure.jpg" alt="Package Module Structure"/>
 					</section>
+					
 					<section>
 						<h2>Importing module from a package</h2>
 						<ul>					
@@ -1298,6 +1907,352 @@ from Game.Level.start import select_difficulty
 select_difficulty(2)
 # ---- #
 </code></pre>
+					</section>
+					
+					<section>
+						<h2>Import math</h2>
+						<ul>
+							<li><span class="CornflowerBlue">math.exp(x)</span><small>Return e raised to the power x, where e = 2.718281… is the base of natural logarithms. This is usually more accurate than <span class="GoldenYellow">math.e ** x</span> or <span class="GoldenYellow">pow(math.e, x)</span></small></li>
+							<li><span class="CornflowerBlue">math.log(x[, base])</span><small>With one argument, return the natural logarithm of x (to base e).</small></li>
+							<li><span class="CornflowerBlue">math.log2(x)</span><small>Return the base-2 logarithm of x. This is usually more accurate than <span class="GoldenYellow">log(x, 2)</span>.</small></li>
+							<li><span class="CornflowerBlue">math.log10(x)</span><small>Return the base-10 logarithm of x. This is usually more accurate than <span class="GoldenYellow">log(x, 10)</span>.</small></li>
+							<li><span class="CornflowerBlue">math.pow(x, y)</span><small>Return x raised to the power y.</small></li>
+							<li><span class="CornflowerBlue">math.sqrt(x)</span><small>Return the square root of x.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Import math</h2>
+						<ul>
+							<li><span class="CornflowerBlue">math.acos(x)</span><small>Return the arc cosine of x, in radians. The result is between 0 and pi.</small></li>
+							<li><span class="CornflowerBlue">math.asin(x)</span><small>Return the arc sine of x, in radians. The result is between -pi/2 and pi/2.</small></li>
+							<li><span class="CornflowerBlue">math.atan(x)</span><small>Return the arc tangent of x, in radians. The result is between -pi/2 and pi/2.</small></li>
+							<li><span class="CornflowerBlue">math.cos(x)</span><small>Return the cosine of x radians.</small></li>
+							<li><span class="CornflowerBlue">math.sin(x)</span><small>Return the sine of x radians.</small></li>
+							<li><span class="CornflowerBlue">math.tan(x)</span><small>Return the tangent of x radians.</small></small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Import math</h2>
+						<ul>
+							<li><span class="CornflowerBlue">math.degrees(x)</span><small>Convert angle x from radians to degrees.</small></li>
+							<li><span class="CornflowerBlue">math.radians(x)</span><small>Convert angle x from degrees to radians.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Import math</h2>
+						<pre><code class="hljs python"># import only pi from math module
+
+from math import pi, e
+print("The value of pi is", pi)
+print("The value of e is", e)
+
+###
+#The value of pi is 3.141592653589793
+#The value of e is 2.718281828459045
+</code></pre>
+					</section>
+
+					<section>
+						<h2>Import random</h2>
+						<p><small>Python offers random module that can generate random numbers</small></p>
+						<ul>
+							<li><span class="GoldenYellow">seed()</span><small>Initialize the random number generator</small></li>
+							<li><span class="GoldenYellow">randint()</span><small>Returns a random number between the given range</small></li>
+							<li><span class="GoldenYellow">choice()</span><small>Returns a random element from the given sequence</small></li>
+							<li><span class="GoldenYellow">shuffle()</span><small>Takes a sequence and returns the sequence in a random order</small></li>
+							<li><span class="GoldenYellow">random()</span><small>Returns a random float number between 0 and 1</small></li>
+							<li><span class="GoldenYellow">sample()</span><small>Returns a given sample of a sequence</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Import random</h2>
+						<pre><code class="hljs python">from random import random, seed
+# seed random number generator
+seed(1)
+# generate random numbers between 0-1
+for _ in range(10):
+	value = random()
+	print(value)
+	
+#0.13436424411240122
+#0.8474337369372327
+#0.763774618976614
+#0.2550690257394217
+#0.49543508709194095
+#0.4494910647887381
+#0.651592972722763
+#0.7887233511355132
+#0.0938595867742349
+#0.02834747652200631
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Import random</h2>
+						<pre><code class="hljs python">from random import randint, seed
+# seed random number generator
+seed(1)
+# generate some integers
+for _ in range(10):
+	value = randint(0, 10)
+	print(value)
+	
+#2
+#9
+#1
+#4
+#1
+#7
+#7
+#7
+#10
+#6
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Import random</h2>
+						<pre><code class="hljs python">from random import choice, seed
+# choose a random element from a list
+# seed random number generator
+seed(1)
+# prepare a sequence
+sequence = [i for i in range(20)]
+print(sequence)
+# make choices from the sequence
+for _ in range(5):
+	selection = choice(sequence)
+	print(selection)
+	
+#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+#4
+#18
+#2
+#8
+#3
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Import random</h2>
+						<pre><code class="hljs python">from random import sample, seed
+# select a random sample without replacement
+# seed random number generator
+seed(1)
+# prepare a sequence
+sequence = [i for i in range(20)]
+print(sequence)
+# select a subset without replacement
+subset = sample(sequence, 5)
+print(subset)
+
+#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+#[4, 18, 2, 8, 3]
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Import random</h2>
+						<pre><code class="hljs python">from random import shuffle, seed
+# randomly shuffle a sequence
+# seed random number generator
+seed(1)
+# prepare a sequence
+sequence = [i for i in range(20)]
+print(sequence)
+# randomly shuffle the sequence
+shuffle(sequence)
+print(sequence)
+
+#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+#[11, 5, 17, 19, 9, 0, 16, 1, 15, 6, 10, 13, 14, 12, 7, 3, 8, 2, 18, 4]
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Import datetime</h2>
+						<pre><code class="hljs python">import datetime
+
+x = datetime.datetime.now()
+
+print(x.year)
+print(x.month, x.day)
+print(x.hour, x.minute, x.second)
+
+print(x.strftime("%A"))
+
+x = datetime.datetime(2020, 5, 17)
+print(x)
+
+date_string = "21 June, 2018"
+date_object = datetime.strptime(date_string, "%d %B, %Y")
+print("date_object =", date_object)
+print("type of date_object =", type(date_object))
+###################
+#2021
+#2 27
+#23 25 26
+#Saturday
+#2020-05-17 00:00:00
+#date_object = 2018-06-21 00:00:00
+#type of date_object = &lt;class 'datetime.datetime'&gt;
+###################
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Import datetime</h2>
+						<p><small>the legal format codes</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Directive</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Example</th>
+								</tr>
+								<tr>
+									<td>%a</td>
+									<td>Weekday, short version</td>
+									<td>Wed</td>
+								</tr>
+								<tr>
+									<td>%A</td>
+									<td>Weekday, full version</td>
+									<td>Wednesday</td>
+								</tr>
+								<tr>
+									<td>%w</td>
+									<td>Weekday as a number 0-6, 0 is Sunday</td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>%d</td>
+									<td>Day of month 01-31</td>
+									<td>31</td>
+								</tr>
+								<tr>
+									<td>%b</td>
+									<td>Month name, short version</td>
+									<td>Dec</td>
+								</tr>
+								<tr>
+									<td>%B</td>
+									<td>Month name, full version</td>
+									<td>December</td>
+								</tr>
+								<tr>
+									<td>%m</td>
+									<td>Month as a number 01-12</td>
+									<td>12</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</section>
+
+					<section>
+						<h2>Import datetime</h2>
+						<p><small>the legal format codes</small></p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Directive</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Description</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Example</th>
+								</tr>
+								<tr>
+									<td>%y</td>
+									<td>Year, short version, without century</td>
+									<td>18</td>
+								</tr>
+								<tr>
+									<td>%Y</td>
+									<td>Year, full version</td>
+									<td>2018</td>
+								</tr>
+								<tr>
+									<td>%H</td>
+									<td>Hour 00-23</td>
+									<td>17</td>
+								</tr>
+								<tr>
+									<td>%I</td>
+									<td>Hour 00-12</td>
+									<td>05</td>
+								</tr>
+								<tr>
+									<td>%M</td>
+									<td>Minute 00-59</td>
+									<td>46</td>
+								</tr>
+								<tr>
+									<td>%S</td>
+									<td>Second 00-59</td>
+									<td>09</td>
+								</tr>
+								<tr>
+									<td>%z</td>
+									<td>UTC offset</td>
+									<td>+0100</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</section>
+
+					<section>
+						<h2>Import time</h2>
+						<pre><code class="hljs python">import time
+seconds = time.time() # the number of seconds passed since epoch.
+print("Seconds since epoch =", seconds)	# epoch is Unix system, January 1, 1970, 00:00:00
+
+# seconds passed since epoch
+seconds = 1545925769.9618232
+local_time = time.ctime(seconds)
+print("Local time:", local_time)
+
+print("This is printed immediately.")
+time.sleep(2.4)
+print("This is printed after 2.4 seconds.\n")
+
+#takes the number of seconds passed since
+#epoch as an argument and returns struct_time in local time
+result = time.localtime(1545925769)
+print("result:", result)
+print("\nyear:", result.tm_year)
+print("tm_hour:", result.tm_hour)
+print()
+
+result = time.gmtime(1545925769) # in UTC
+
+named_tuple = time.localtime() # get struct_time
+time_string = time.strftime("%m/%d/%Y, %H:%M:%S", named_tuple)
+print(time_string)
+print()
+
+time_string = "21 June, 2018"
+result = time.strptime(time_string, "%d %B, %Y")
+print(result)
+###################
+#Seconds since epoch = 1614456054.4059548
+#Local time: Thu Dec 27 15:49:29 2018
+#This is printed immediately.
+#This is printed after 2.4 seconds.
+
+#result: time.struct_time(tm_year=2018, tm_mon=12, tm_mday=27, tm_hour=15, tm_min=49, tm_sec=29, tm_wday=3, tm_yday=361, tm_isdst=0)
+
+#year: 2018
+#tm_hour: 15
+
+#12/28/2018, 09:47:41
+
+#time.struct_time(tm_year=2018, tm_mon=6, tm_mday=21, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=172, tm_isdst=-1)
+###################
+						</code></pre>
 					</section>
 				</section>
 				
@@ -1550,10 +2505,6 @@ shutil.rmtree('test') # not empty directory but remove all
 									<td><small>Raised when attribute assignment or reference fails</small></td>
 								</tr>
 								<tr>
-									<td><small>EOFError</small></td>
-									<td><small>Raised when the input() functions hits end-of-file condition</small></td>
-								</tr>
-								<tr>
 									<td><small>ImportError</small></td>
 									<td><small>Raised when the imported module is not found</small></td>
 								</tr>
@@ -1568,6 +2519,10 @@ shutil.rmtree('test') # not empty directory but remove all
 								<tr>
 									<td><small>FileNotFoundError</small></td>
 									<td><small>Raised when a file we try to open does not exist</small></td>
+								</tr>
+								<tr>
+									<td><small>OverflowError</small></td>
+									<td><small>Raised when result of an arithmetic operation is too large to be represented</small></td>
 								</tr>
 							</tbody>
 						</table>
@@ -1587,10 +2542,6 @@ shutil.rmtree('test') # not empty directory but remove all
 								<tr>
 									<td><small>NameError</small></td>
 									<td><small>Raised when a variable is not found in local or global scope</small></td>
-								</tr>
-								<tr>
-									<td><small>OverflowError</small></td>
-									<td><small>Raised when result of an arithmetic operation is too large to be represented</small></td>
 								</tr>
 								<tr>
 									<td><small>RuntimeError</small></td>
@@ -1625,7 +2576,41 @@ shutil.rmtree('test') # not empty directory but remove all
 						<ul>
 							<li><small>In Python, exceptions can be handled using a <span class="highlight-green">try</span> statement</small></li>
 							<li><small>handles exceptions is written in the <span class="highlight-green">except</span> clause</small></li>
+							<li><small>Use the <span class="highlight-green">else</span> keyword to define a block of code to be executed if <span class="GoldenYellow">no errors</span> were raised</small></li>
+							<li><small>The <span class="highlight-green">finally</span> block, if specified, will be executed regardless if the try block raises <span class="GoldenYellow">an error</span> or <span class="GoldenYellow">not</span></small></li>
 						</ul>
+<pre><code class="hljs python">
+try:
+   # do something
+   
+   x = 10 / 12
+   #1# x = a * 7
+   #2# x = 10 / 0
+
+except ValueError:
+   # handle ValueError exception
+   print("value error")
+
+except (TypeError, ZeroDivisionError):
+   # handle multiple exceptions
+   # TypeError and ZeroDivisionError
+   print("type and zero error")
+
+except:
+   # handle all other exceptions
+   print("other error")
+
+else:
+   print("nothing error")
+
+finally:
+   print("Always print")
+
+print(x)
+</code></pre>
+					</section>
+					<section>
+						<h2>Catching Specific Exceptions in Python</h2>
 <pre><code class="hljs python"># import module sys to get the type of exception
 import sys
 
@@ -1641,27 +2626,6 @@ for entry in randomList:
         print("Next entry.")
         print()
 print("The reciprocal of", entry, "is", r)
-</code></pre>
-					</section>
-					<section>
-						<h2>Catching Specific Exceptions in Python</h2>
-<pre><code class="hljs python">
-try:
-   # do something
-   pass
-
-except ValueError:
-   # handle ValueError exception
-   pass
-
-except (TypeError, ZeroDivisionError):
-   # handle multiple exceptions
-   # TypeError and ZeroDivisionError
-   pass
-
-except:
-   # handle all other exceptions
-   pass
 </code></pre>
 					</section>
 					<section>
