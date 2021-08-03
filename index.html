@@ -1076,9 +1076,9 @@ Inside else</code></pre>
 					<section>
 						<h2>Python pass statement</h2>
 						<ul>
-							<li style="margin-bottom:15px"><small>In Python programming, the pass statement is a null statement</small></li>
-							<li style="margin-bottom:15px"><small>However, nothing happens when the pass is executed</small></li>
-							<li><small>We can do the same thing in an empty function or class as well</small></li>
+							<li style="margin-bottom:15px"><small>In Python programming, the <span class="highlight-green">pass</span> statement is a null statement</small></li>
+							<li style="margin-bottom:15px"><small>However, nothing happens when the <span class="highlight-green">pass</span> is executed</small></li>
+							<li><small>We can do the same thing in an <span class="Red">empty</span> function or class as well</small></li>
 						</ul>
 <pre><code class="hljs python">sequence = {'p', 'a', 's', 's'}
 for val in sequence:
@@ -1186,9 +1186,24 @@ def greet2(name, msg="Good morning!"):
 #greet2(name="FreezeMan", msg="Good morning !!!")
 #greet2(name="FreezeMan", msg="Good morning !!!", "asdasd") # Error SyntaxError: positional argument follows keyword argument
 
+
+# Note: SyntaxError: non-default argument follows default argument
 def greet3(name="Monica", msg):
        """SyntaxError: non-default argument follows default argument"""
        print("Hello", name + "," + msg)
+
+def greet3(name="Monica", msg="hello"):
+       """SyntaxError: non-default argument follows default argument"""
+       print("Hello", name + "," + msg)
+
+#greet3("Monica")
+#greet3("FreezeMan", msg="Come On!!!")
+#greet3("FreezeMan", "Come On!!!")
+#greet3(msg="Come On!!!", "FreezeMan") # SyntaxError: positional argument follows keyword argument
+#greet3(msg="Come On!!!", name="FreezeMan")
+#greet3("Come On!!!", name="FreezeMan") # TypeError: greet3() got multiple values for argument 'name'
+#greet3(name="FreezeMan", msg="Good morning !!!")
+#greet3(name="FreezeMan", msg="Good morning !!!", "asdasd") # SyntaxError: positional argument follows keyword argument
 
 </code></pre>
 					</section>
