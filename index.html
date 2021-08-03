@@ -390,8 +390,8 @@ s = 'Hello world!'
 s = '''A multiline
 string'''
 s = """Hello world!"""
-s[4] = 'l'
-print("s[4] = ", s[4]) => 's[4] = l'
+s[4] = 'l'  # TypeError: 'str' object does not support item assignment
+print("s[4] =", s[4]) => 's[4] = l'
 print(s) => 'Helll world!'
 a, b = "AB"
 a, b = "AABB" # ValueError: too many values to unpack (expected 2)
@@ -560,15 +560,26 @@ print('Hello {name}, {greeting}'.format(greeting = 'Goodmorning', name = 'John')
 # Hello John, Goodmorning
 print('The value of z is %3.2f' %z)
 # The value of z is 12.35
+print("int is:%i - int is:%8i - int is:%1i" % (12.23, 12, 100))
+# int is:12 - int is:      12 - int is:100
+print("int is, %i - float is %8.5f" % (12.23, 12))
+# int is, 12 - float is 12.00000
+print("int is %s. float is %s." % (12.23, 12))
+# int is 12.23. float is 12.
 greeting = 'Good Morning'
 name = 'Farzad'
 print(f"Hello {name}, {greeting}")
 # Hello Farzad, Good Morning
+print(f"{2 * 37}")
+# 74
+print(f"{2 * (name + ' ')}|||")
+# Farzad Farzad |||
 </code></pre>
 					</section>
 
 					<section>
 						<h2>Python Input</h2>
+						<p><span class="GoldenYellow">Note: </span>input has string value out or returning</p>
 						<pre><code class="hljs python">num = input('Enter a number: ')
 print(num)
 ### output:
@@ -1017,7 +1028,7 @@ i = 1
 
 # ----------- #
 
-while i <= n:
+while i &lt;= n:
     sum = sum + i
     i = i+1    # update counter
 
@@ -1036,7 +1047,7 @@ The sum is 55
 						<p>Same as with for loops, while loops can also have an optional else block</p>
 <pre><code class="hljs python">counter = 0
 
-while counter < 3:
+while counter &lt; 3:
     print("Inside loop")
     counter = counter + 1
 else:
@@ -1091,13 +1102,13 @@ class Example:
 					<section>
 						<h2>components of Function</h2>
 						<ul>
-							<li style="margin-bottom:15px"><small>Keyword def that marks the start of the function header</small></li>
-							<li style="margin-bottom:15px"><small>function name to uniquely identify the function</small></li>
-							<li style="margin-bottom:15px"><small>Parameters (arguments) through which we pass values to a function. They are optional</small></li>
-							<li style="margin-bottom:15px"><small>A colon (:) to mark the end of the function header</small></li>
-							<li style="margin-bottom:15px"><small>Optional documentation string (docstring) to describe what the function does</small></li>
-							<li style="margin-bottom:15px"><small>One or more valid python statements that make up the function body. Statements must have the same indentation level (usually 4 spaces)</small></li>
-							<li><small>An optional return statement to return a value from the function</small></li>
+							<li style="margin-bottom:15px"><small>Keyword <span class="Red">def</span> that marks the start of the function header</small></li>
+							<li style="margin-bottom:15px"><small>function <span class="GoldenYellow">name</span> to uniquely identify the function</small></li>
+							<li style="margin-bottom:15px"><small><span class="GoldenYellow">Parameters</span> (arguments) through which we pass values to a function. They are optional</small></li>
+							<li style="margin-bottom:15px"><small>A colon (<span class="Red">:</span>) to mark the end of the function header</small></li>
+							<li style="margin-bottom:15px"><small>Optional documentation string (<span class="GoldenYellow">docstring</span>) to describe what the function does</small></li>
+							<li style="margin-bottom:15px"><small>One or more valid python statements that make up the function <span class="GoldenYellow">body</span>. Statements must have the same indentation level (usually 4 spaces)</small></li>
+							<li><small>An optional <span class="Red">return</span> statement to return a value from the function</small></li>
 						</ul>
 					</section>
 					<section>
@@ -1235,6 +1246,7 @@ def parent():
 
 					<section>
 						<h2>Python Inner Functions(exp:2:rename)</h2>
+						<p>use only function name as refer or ref to address of define function in memory</p>
 <pre><code class="hljs python"># Program to show the use of Inner Functions
 def parent(num):
     def first_child():
