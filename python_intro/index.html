@@ -1,0 +1,763 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Python 3 and Django Tutorial</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+  <!-- CSS Base -->
+  <link rel="stylesheet" type='text/css' media='all' href="css/webslides.css">
+
+  <!-- Optional - CSS SVG Icons (Font Awesome) -->
+  <link rel="stylesheet" type='text/css' media='all' href="css/svg-icons.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+<main role="main">
+  <article id="webslides">
+    <!-- Slide 1 -->
+    <section class="bg-black-blue aligncenter">
+      <span class="background dark" style="background-image:url('images/python-lang-unsplash.jpg')"></span>
+      <!--.wrap = container (width: 90%) -->
+      <div class="wrap">
+        <h1 class="text-landing text">Tutorial</h1>
+        <br>
+        <h1 class="">Python (ver.3)</h1>
+        <p class="text-subtitle">and</p>
+        <h1 class="">Django (stable)</h1>
+        <p class="text-symbols">* * *</p>
+        <p class="text-intro">
+          Farzad Latifnia
+          <br>
+          @FreezeMan
+        </p>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <section class="bg-gradient-r aligncenter">
+      <div class="wrap">
+        <h2>Introduction</h2>
+        <p><code>Python Language</code></p>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 2 -->
+    <section>
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <img class="alignright" width="500" height="768" src="images/guido-van-rossum-black.jpg" alt="guido-van-rossum">
+        <h2><strong>Python Creator</strong></h2>
+        <p><strong>Guido van Rossum</strong> (31 January 1956)</p>
+        <p>a Dutch programmer best known as the author of the Python programming language</p>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 3 -->
+    <section class="bg-black-blue fullscreen">
+      <div class="card-50">
+        <figure>
+          <img src="images/guido-van-rossum.jpg" alt="guido-van-rossum">
+          <figcaption>
+            <a href="https://unsplash.com/@dburka" title="Guido van Rossum">
+              <svg class="fa-camera">
+                <use xlink:href="#fa-camera"></use>
+              </svg>
+              Guido van Rossum
+            </a>
+          </figcaption>
+        </figure>
+        <!-- end figure-->
+        <div class="flex-content">
+          <h2><strong>Timeline Python</strong></h2>
+          <p>Dec 1989 (Start)</p>
+          <p>1990 Ends(first release)</p>
+          <p>1991 (0.9.0)</p>
+          <p>Jan 1994 (1.0.0)</p>
+          <p>1995 - Last Release by Van Rossum (1.2)</p>
+          <p>...</p>
+        </div>
+        <!-- end .flex-content-->
+      </div>
+      <!-- end .card-50-->
+    </section>
+    <!-- Slide 4 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+          <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+          <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Zen of Python</strong></h3>
+        <ul class="text-cols">
+          <li>1. Beautiful is better than ugly</li>
+          <li>2. Explicit is better than implicit</li>
+          <li>3. Simple is better than complex</li>
+          <li>4. Complex is better than complicated</li>
+          <li>5. Flat is better than nested</li>
+          <li>6. Sparse is better than dense</li>
+          <li>7. Readability counts</li>
+          <li>8. Special cases aren't special enough to break the rules</li>
+          <li>9. Although practicality beats purity</li>
+        </ul>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 5 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+          <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+          <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3 class=""><strong>Zen of Python</strong></h3>
+        <ul class="text-cols">
+          <li>10. Errors should never pass silently</li>
+          <li>11. Unless explicitly silenced</li>
+          <li>12. In the face of ambiguity, refuse the temptation to guess</li>
+          <li>13. There should be one—and preferably only one—obvious way to do it</li>
+          <li>14. Although that way may not be obvious at first unless you're Dutch</li>
+          <li>15. Now is better than never</li>
+          <li>16. Although never is often better than right now</li>
+          <li>17. If the implementation is hard to explain, it's a bad idea</li>
+          <li>18. If the implementation is easy to explain, it may be a good idea</li>
+          <li>19. Namespaces are one honking great idea—let's do more of those!</li>
+        </ul>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 6 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+          <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+          <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <div class="content-center">
+          <h3><strong>Python</strong> | <strong>Interpreter</strong> or <strong>Compiler</strong></h3>
+          <br>
+          <h4>CPython</h4>
+          <div>Written in C, Python and default interpreter</div>
+          <br>
+          <h4>PyPy(with JIT compiler)</h4>
+          <div>is 4.4 times faster than CPython</div>
+          <br>
+          <h4>Numba(with JIT compiler)</h4>
+          <div>Translates Python functions to optimized machine code at runtime using the industry-standard LLVM compiler library</div>
+        </div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 7 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+          <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+          <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <div class="">
+          <h3><strong>Runtime</strong></h3>
+          <hr>
+          <p><strong>JIT</strong>Just-in-Time: -dynamic translation -runtime compilation</p>
+          <p>code -> ByteCode (interpreter)-> Compiler (JIT)-> Machine Code -> VM (Run)</p>
+          <h5>Note!!!</h5>
+          <p>Global Interpreter Lock<strong>(GIL)</strong> allow to multi threading</p>
+        </div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 8 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+          <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+          <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <div class="">
+          <h2><strong>Why Python ?</strong></h2>
+          <hr>
+          <ul class="text-cols">
+            <li>
+              <h5>Readable and Maintainable Code</h5><div class="text-info">(High Level, Expressive, Easy to Learn)</div>
+            </li>
+            <li>
+              <h5>Multiple Programming Paradigms </h5><div class="text-info">(Flexibility, Dynamic)</div>
+              <div class="text-info">The imperative style</div>
+              <div class="text-info">The functional style</div>
+              <div class="text-info">The object-oriented style</div>
+              <div class="text-info">The procedural style</div>
+              <div class="text-info">The Structure and Modular style</div>
+            </li>
+            <li>
+              <h5>Compatible with Major Platforms and Systems</h5><div class="text-info">(Portable, Cross Platform, Platform independence)</div>
+            </li>
+            <li>
+              <h5>Robust Standard Library (PyPi by pip)</h5>
+            </li>
+            <li>
+              <h5>Many Open Source Frameworks and Tools</h5><div class="text-info">(AI, ML, Multimedia, Visualization, Data Science, Web, Network, ...)</div>
+            </li>
+            <li>
+              <h5>Simplify Complex Software Development</h5><div class="text-info">(Simple, OpenSource, Community Support, Growing Popularity ex: StackOverflow)</div>
+            </li>
+            <li>
+              <h5>Adopt Test Driven Development</h5>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 9 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3>Where is <strong>Python</strong> mostly used</h3>
+        <br>
+        <div class="content-left">
+          <h5>1. Web Development</h5>
+          <h5>2. Networking, I/O, event Loop and Driven, messaging, Socket</h5>
+          <h5>3. Game Development</h5>
+          <h5>4. Machine Learning and Artificial Intelligence</h5>
+          <h5>5. Data Science and Data Visualization</h5>
+          <h5>6. Data Engineering</h5>
+          <h5>7. Robots</h5>
+        </div>
+        <div class="content-right">
+          <h5>8. Desktop GUI</h5>
+          <h5>9. Web Scraping Applications</h5>
+          <h5>10. Business Applications</h5>
+          <h5>11. Audio and Video Applications</h5>
+          <h5>12. 3D CAD/CAM Applications</h5>
+          <h5>13. Embedded Applications</h5>
+          <h5>14. Hacks</h5>
+        </div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 5 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3 class="">Who uses <strong>Python</strong></h3>
+        <hr>
+        <ul class="text-cols">
+          <li>Google(in core)</li>
+          <li>Youtube(video sharing service)</li>
+          <li>Yahoo Maps</li>
+          <li>Quora, Reddit, DropBox</li>
+          <li>Instagram(facebook)</li>
+          <li>Twilio</li>
+          <li>Uber</li>
+          <li>Netflix</li>
+          <li>PayPal</li>
+          <li>BitTorrent(peer-to-peer file sharing system)</li>
+          <li>NASA ,NSA ,FBI ,CIA (scientific programming tasks, cryptography and intelligence analysis.)</li>
+          <li>Mozilla</li>
+          <li>Intel, Cisco, Hewlett-Packard, Seagate, Qualcomm, and IBM(use Python for hardware testing)</li>
+          <li>Robot uses Python to develop commercial robotic vacuum cleaners</li>
+          <li>Disney</li>
+          <li>(...)</li>
+        </ul>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 9 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3>Editors & IDEs</h3>
+        <br>
+        <div class="content-left">
+          <h5>1. Eclipse + pydev</h5>
+          <h5>2. PyCharm</h5>
+          <h5>3. Visual Studio</h5>
+          <h5>4. Spyder</h5>
+          <h5>5. Thonny</h5>
+          <h5>6. Komodo IDE</h5>
+          <h5>7. NetBeans + Python Plugin(but   Last Update: 2015-11-24)</h5>
+        </div>
+        <div class="content-right">
+          <h5>8. Sublime Text</h5>
+          <h5>9. Atom</h5>
+          <h5>10. GNU Emacs</h5>
+          <h5>11. Vi / Vim</h5>
+          <h5>12. Visual Studio Code</h5>
+          <h5>13. Notepad++</h5>
+        </div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 9 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3>What do we need for start ?</h3>
+        <br>
+        <div class="">
+          <h5>1. IDE or Editor</h5>
+          <h5>2. Python Install(ver 3)</h5>
+          <h5>3. pip</h5>
+          <h5>4. Virtual Env</h5>
+          <h5>5. Django(stable)</h5>
+          <h5>6. an Effective effort with Idea :)</h5>
+          <h5>7. install or programming your requirement packages :)</h5>
+        </div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <section class="bg-apple aligncenter">
+      <h2>For Expert</h2>
+      <p><code>Packages and Apps</code></p>
+    </section>
+    <!-- Slide 10 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Web Development</strong></h3>
+        <br>
+        <div class="content-left">
+          <h5>Django</h5>
+          <h5>Flask</h5>
+          <h5>Pyramid</h5>
+          <h5>TurboGears</h5>
+          <h5>web2py</h5>
+          <h5>CherryPy</h5>
+          <h5>...</h5>
+        </div>
+        <div class="content-right">
+          <img class="alignright size-20" src="images/django-logo-negative.png" alt="Django">
+          <img class="alignright size-20" src="images/flask-logo.png" alt="Flask">
+          <img class="alignright size-20" src="images/pyramid-60x60.png" alt="Pyramid">
+          <img class="alignright size-20" src="images/220px-TgGear.png" alt="TurboGears">
+          <img class="alignright size-20" src="images/web2py_logo.png" alt="web2py">
+          <img class="alignright size-20" src="images/cherrypy_logo_big.png" alt="CherryPy">
+        </div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 11 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Networking, I/O, Event, Messaging, Socket</strong></h3>
+        <br>
+        <div class="">
+          <div><h6>Asyncio</h6><p>(Python standard library) Asynchronous I/O, event loop, coroutines and tasks</p></div>
+          <div><h6>Diesel</h6><p>Greenlet-based event I/O Framework for Python. API for writing
+            network clients and servers(TCP/UDP).</p></div>
+          <div>
+            <h6>Pulsar</h6><p>Event-driven concurrent framework for Python</p>
+            <ul class="text-cols">
+              <li>JSON-RPC</li>
+              <li>HttpClient</li>
+              <li>Asynchronous WSGI server</li>
+              <li>Socket servers</li>
+              <li>Web Sockets</li>
+              <li>Asynchronous Test suite</li>
+              <li>Data stores (with async Redis client)</li>
+              <li>Task queue consumers</li>
+              <li>Asynchronous botocore</li>
+              <li>django integration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 12 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Networking, I/O, Event, Messaging, Socket</strong></h3>
+        <br>
+        <div class="">
+          <div><h6>Pyzmq and TxZMQ</h6><p>A Python wrapper for message library lightweight and fast messaging implementation</p></div>
+          <div><h6>NAPALM</h6><p>Cross-vendor API to manipulate network devices like cisco</p></div>
+          <div>
+            <h6>Twisted</h6><p>An event-driven networking engine</p>
+            <ul class="text-cols">
+              <li>HTTP clients and servers</li>
+              <li>HTML templating</li>
+              <li>WSGI server</li>
+              <li>SSHv2 and Telnet clients and servers</li>
+              <li>terminal emulators Clients and servers for IRC</li>
+              <li>XMPP</li>
+              <li>other IM protocols IMAPv4, POP3, SMTP clients and servers</li>
+              <li>NMEA-compatible GPS receivers</li>
+              <li>DNS client and tools for making your own DNS servers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 13 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Game Development</strong></h3>
+        <br>
+        <div><h6>PySoy</h6><p>3D game engine by Python 3</p></div>
+        <div><h6>PyGame</h6><p>functionality and a library for game development</p></div>
+        <h4>Games such as</h4>
+        <div><strong>Civilization-IV</strong>, <strong>Disney’s Toontown Online</strong>, <strong>Vega Strike</strong> , <strong>Freedom Force</strong>, <strong>The Sims 4</strong>, etc.
+          have been built using Python.</div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 14 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Machine Learning and Artificial Intelligence</strong></h3>
+        <br>
+        <div><h6>Pandas</h6><p>a fast, powerful, flexible and easy to use open source data analysis and manipulation tool</p></div>
+        <div><h6>Scikit-Learn</h6><p>more popular machine learning algorithms built-in</p></div>
+        <div><h6>NumPy</h6><p>adding support for large, multi-dimensional arrays and matrices</p></div>
+        <div><h6>TensorFlow</h6><p>a low-level library that allows you to build custom machine learning algorithms</p></div>
+        <div><h6>SciPy</h6><p>ecosystem of open-source software for mathematics, science, and engineering</p></div>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 15 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Machine Learning and Artificial Intelligence</strong></h3>
+        <br>
+        <div><h6>IPython</h6><p>Rich architecture for interactive computing and shell, high performance tools for parallel computing(GUI by Jupyter)</p></div>
+        <div><h6>PyTorch</h6><p>An open source ML framework that accelerates the path from research prototyping to production deployment.</p></div>
+        <h6>(*)face recognition</h6>
+        <h6>(*)voice recognition</h6>
+        <h6>(*)Neural networks</h6>
+        <h6>(*)Deep learning</h6>
+        <h6>(*)Support vector machines</h6>
+        <h6>(*)Random forest</h6>
+
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 16 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Python use cases for AI and ML</strong></h3>
+        <br>
+        <h6>Travel</h6> Skyscanner
+        <h6>Fintech</h6> Venmo, Affirm, Robinhood
+        <h6>Transportation</h6> Uber
+        <h6>Healthcare</h6> Fathom , AiCure
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 17 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Python for ML: useful open source projects</strong></h3>
+        <br>
+        <h6>OpenCog Foundation (Robotics Human, human level)</h6> https://opencog.org/
+        <h6>Institute for Artificial Intelligence (Robotics Helper)</h6> https://ai.uni-bremen.de/
+        <h6>Zulip (real-time chat)</h6> https://zulipchat.com/
+        <h6>Magenta (music and images -> using this data to train machine learning models)</h6> https://magenta.tensorflow.org/
+        <h6>MailPile (e-mail client)</h6> https://www.mailpile.is/
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 18 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Data Science and Data Visualization</strong></h3>
+        <p>visualize and plotting graphs</p>
+        <h6>Matplotlib</h6>
+        <h6>Seaborn</h6>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 19 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Desktop GUI</strong></h3>
+        <br>
+        <ul class="text-cols">
+          <li>wxWidgets</li>
+          <li>Kivy</li>
+          <li>PYQT</li>
+          <li>tkInter</li>
+          <li>pyGUI</li>
+          <li>Libavg</li>
+          <li>camelot</li>
+          <li>CEF Python</li>
+          <li>pyjs</li>
+        </ul>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 20 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Web Scraping Applications</strong></h3>
+        <p>Imagine you have to pull a large amount of data from websites and you want to do it as quickly as possible</p>
+        <h6>Selenium</h6>web testing library. It is used to automate browser activities.
+        <h6>BeautifulSoup</h6>for parsing HTML and XML documents. It creates parse trees that is helpful to extract the	data easily.
+        <h6>Pandas</h6>a library used for data manipulation and analysis. It is used to extract the data and store it in the desired format.
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 21 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Business Applications</strong></h3>
+        <p>Business Applications are different than our normal applications covering domains such as e-commerce, ERP and many more Platforms</p>
+        <h6>TryTon</h6>
+        <p>three-tier high-level general purpose computer application platform on top of which is built an
+          Enterprise resource planning business solution through a set of Tryton modules. The three-tier architecture consists of the Tryton
+          client, the Tryton server and the Database management system, ideal for companies of any size, easy to use, complete
+          and 100% Open Source.
+        </p>
+        <h3>includes all these features:</h3>
+        <p>(FINANCIAL ACCOUNTING), (SALES), (INVENTORY & STOCK), (ANALYTIC ACCOUNTING), (CRM), (PURCHASING), (MANUFACTURING), (SHIPPING), (PROJECT MANAGEMENT), (SUBSCRIPTION MANAGEMENT)</p>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 22 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Audio and Video Applications</strong></h3>
+        <h6>TimPlayer</h6>
+        <h6>cplay</h6>
+        <h6>Freeseer</h6>Conference recording software and screencast tool
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 23 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>3D CAD/CAM Applications</strong></h3>
+        <h6>FreeCAD</h6>
+        <h6>PythonCAD</h6>
+        <h6>Blender</h6>Python as a scripting language
+        <h6>Vintech RCAM</h6>system for profesional nesting, specially designed for programming CNC machines for laser, plasma and oxy-fuel cutting
+        <!-- .end .wrap -->
+      </div>
+    </section>
+    <!-- Slide 24 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Embedded Applications</strong></h3>
+        <h6>Raspberry Pi</h6>The most well-known embedded application could be the Raspberry Pi which uses Python for its computing
+      </div>
+      <!-- .end .wrap -->
+    </section>
+    <!-- Slide 23 -->
+    <section class="slide-top">
+      <header class="bg-white">
+        <div class="wrap">
+          <p class="logo">
+            <h4><span class="alignleft">Python(ver.3) and Django</span></h4>
+            <div class="alignright"><h6>Farzad Latifnia</h6><div class="aligncenter">@FreezeMan</div></div>
+          </p>
+        </div>
+      </header>
+      <div class="wrap">
+        <h3><strong>Hacks</strong></h3>
+        <h6>scapy</h6>sniff or forge data packets, Scapy provides the functionality of nmap, arpspoof, wireshark and many other network scanners tools
+        <h6>impacket</h6>works with network protocols & gives low level programming access to data packets. Core Impacket easily interacts with Windows like – MSSQL, SMB, NETBIOS and other protocols. Core impact provides pass the key attack scenarios. Network protocols like – TCP, UDP, ARP are featured with impacket
+        <h6>Python-nmap</h6>used in port scanning
+        <h6>...</h6>
+      </div>
+      <!-- .end .wrap -->
+    </section>
+  </article>
+</main>
+<!--main-->
+
+<script src="./js/vendor/jquery-3.4.1.min.js"></script>
+<!-- Required -->
+<script src="./js/webslides.min.js"></script>
+<script>
+  window.ws = new WebSlides();
+</script>
+<!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+<script defer src="./js/svg-icons.js"></script>
+</body>
+</html>
